@@ -8,54 +8,54 @@ body {
    display: flex;
    justify-content: center;
    align-items: center;
+   background-color: rgb(228, 234, 245);
 }
 
-h1, .links {
-   
-   font-family: 'Exo 2', sans-serif;
-   color: rgb(106, 140, 204);
-}
+
 
 h1 {
+   color: rgb(86, 134, 224);
    margin-top: 2vh;
    margin-bottom: 1vh;
    text-align: center;
    font-size: 5vh;
+   font-family: 'Rosario', sans-serif;
 }
 
 
 section {
-   padding: 50px;
+   padding: 40px 20px 40px 20px;
+   width: 300px;
    border-width: 1px;
-   border-style: solid;
-   border-color: rgb(216, 216, 216);
    border-radius: 5px;
-   background-color: rgb(228, 234, 245);
    margin-top: 15vh;
-   box-shadow: 0 0 0.5em rgb(210, 216, 226);
+   background-color: rgb(205, 206, 248);
 }
 
 form {
-   display: flex;
-   flex-direction: column;
+   display: block;
+   box-sizing: border-box;
    align-items: center;
+   
 }
 
 label {
    margin-top: 1vh;
-   color: rgb(172, 171, 171);
+   font-size: 10px;
+   color: rgb(86, 134, 224);
    font-family: 'Arimo', sans-serif;
+   font-weight: bold;
 }
 
 input {
    display: block;
    box-sizing: border-box;
-   width: 40vw;
+   width: 300px;
    height: 8vh;
    padding: 10px;
-   font-weight: 800;
+   
    margin-top: 1vh;
-   border-radius: 5px;
+   border-radius: 8px;
    border-style: none;
    font-size: 20px;
    border-style: solid;
@@ -70,10 +70,10 @@ input:focus {
    
 }
 button {
-   width: 40vw;
+   width: 300px;
    height: 8vh;
    font-size: 15px;
-   border-radius: 5px;
+   border-radius: 8px;
    margin-top: 1vh;
    background-color: rgb(20, 87, 212);
    font-weight: bold;
@@ -84,6 +84,7 @@ button {
 
 button:hover {  
    box-shadow: 0 0 0.5em rgb(20, 87, 212);
+   opacity: 90%;
 }
 
 input:hover {  
@@ -94,8 +95,10 @@ input:hover {
 }
 
 .links {
+   font-family: 'Arimo', sans-serif;
    margin-top: 5vh;
    display: flex;
    justify-content: space-between;
    font-weight: bold;
+   font-size: 10px;
 }
