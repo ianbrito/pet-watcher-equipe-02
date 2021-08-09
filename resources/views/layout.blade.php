@@ -17,7 +17,7 @@
    <link href="https://fonts.googleapis.com/css2?family=Rosario:wght@300&display=swap" rel="stylesheet">
    <title>Pet Watcher</title>
 </head>
-<body>
+<body style="background-image:url('fundo-home.png');background-repeat: no-repeat; ">
    <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
          <div class="container">
@@ -46,8 +46,9 @@
          </div>
       </nav>
 </header>
-</body>
 <div class="container">
    @yield('content')
 </div>
+</body>
+
 </html>
