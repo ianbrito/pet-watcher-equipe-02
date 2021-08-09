@@ -14,23 +14,30 @@
    <title>Pet Watcher - Login</title>
 </head>
 <body>
-   
+
    <section>
       <h1>Pet Watcher</h1>
-      <form action="" method="post">
+      <form action=" {{action('Auth\LoginController@Login')}} " method="post">
          @csrf
          <label>
-            Login *
-            <input type="text" required>
+            Email *
+            <input type="text" type="email" name="email" placeholder="login">
          </label>
-         
+
          <label>
             Senha *
-            <input type="password" required>
+            <input type="password" name="password" placeholder="senha">
          </label>
 
          <button type="submit">Logar</button>
       </form>
+
+      @if ($errors->has('email') || $errors->has('password'))
+        <span class="">
+            <strong>Erro ao logar</strong>
+        </span>
+      @endif
+
       <div class="links">
          <a href="">Não possuo cadastro!</a>
          <a href="">Esqueci a senha!</a>
