@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-@extends('layout')
-
-@section('content')
-
-<div class="container-login">
-   <h1>Pet Watcher</h1>
-   <section class="login-section">
-      <form action="" method="post" >
-         @csrf
-         <label>
-            Login *
-            <input type="text" required>
-         </label>
-         
-         <label>
-            Senha *
-            <input type="password" required>
-=======
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -36,40 +17,20 @@
 
    <section>
       <h1>Pet Watcher</h1>
-      <form action=" {{action('Auth\LoginController@Login')}} " method="post">
+      <form action=" {{action('UserController@updatePassword', Auth::user())}} " method="post">
          @csrf
-         <label>
-            Email *
-            <input type="text" type="email" name="email" placeholder="login">
-         </label>
 
          <label>
-            Senha *
+            Nova Senha *
             <input type="password" name="password" placeholder="senha">
->>>>>>> feature-caso12
          </label>
 
-         <button type="submit">Logar</button>
+         <button type="submit">Trocar Senha</button>
       </form>
-<<<<<<< HEAD
-=======
-
-      @if ($errors->has('email') || $errors->has('password'))
-        <span class="">
-            <strong>Erro ao logar</strong>
-        </span>
-      @endif
-
->>>>>>> feature-caso12
       <div class="links">
          <a href="">Não possuo cadastro!</a>
          <a href="">Esqueci a senha!</a>
       </div>
    </section>
-<<<<<<< HEAD
-</div>
-@stop
-=======
 </body>
 </html>
->>>>>>> feature-caso12
