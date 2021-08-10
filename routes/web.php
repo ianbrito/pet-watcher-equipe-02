@@ -11,7 +11,6 @@
 |
 */
 
-<<<<<<< HEAD
 Route::get('', function () {
     return view('layout');
 });
@@ -19,10 +18,9 @@ Route::get('', function () {
 Route::get('/login', function () {
    return view('auth.login');
 })->name('login');
-=======
 
 Route::get('/', function () {
-    return view('home');
+    return view('layout');
 })->name('home');
 Route::get('home', function () {
     return view('home');
@@ -37,6 +35,5 @@ Route::get('logout', 'Auth\LoginController@logout') -> name('logout');
 Route::get('reset/password', function () {
     return view('user.password');
 })->name('reset/password');
->>>>>>> feature-caso12
 
 Route::post('reset/password/{user}' , 'UserController@updatePassword');

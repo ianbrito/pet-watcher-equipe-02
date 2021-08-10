@@ -1,41 +1,10 @@
-<<<<<<< HEAD
 @extends('layout')
 
 @section('content')
 
-<div class="container-login">
-   <h1>Pet Watcher</h1>
-   <section class="login-section">
-      <form action="" method="post" >
-         @csrf
-         <label>
-            Login *
-            <input type="text" required>
-         </label>
-         
-         <label>
-            Senha *
-            <input type="password" required>
-=======
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="global.css">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Exo+2:ital,wght@0,100;0,200;0,300;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Rosario:wght@300&display=swap" rel="stylesheet">
-
-   <title>Pet Watcher - Login</title>
-</head>
-<body>
-
-   <section>
+   <div class="container-login">
       <h1>Pet Watcher</h1>
+   <section class="login-section">
       <form action=" {{action('Auth\LoginController@Login')}} " method="post">
          @csrf
          <label>
@@ -46,13 +15,10 @@
          <label>
             Senha *
             <input type="password" name="password" placeholder="senha">
->>>>>>> feature-caso12
          </label>
 
          <button type="submit">Logar</button>
       </form>
-<<<<<<< HEAD
-=======
 
       @if ($errors->has('email') || $errors->has('password'))
         <span class="">
@@ -60,16 +26,11 @@
         </span>
       @endif
 
->>>>>>> feature-caso12
       <div class="links">
          <a href="">Não possuo cadastro!</a>
          <a href="">Esqueci a senha!</a>
       </div>
    </section>
-<<<<<<< HEAD
 </div>
 @stop
-=======
-</body>
-</html>
->>>>>>> feature-caso12
+
