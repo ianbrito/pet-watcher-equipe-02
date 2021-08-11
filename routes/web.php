@@ -38,3 +38,13 @@ Route::get('reset/password', function () {
 })->name('reset/password');
 
 Route::post('reset/password/{user}' , 'UserController@updatePassword');
+
+
+// Especie Animal
+Route::get('especieanimal', 'EspecieAnimalController@index') ;
+Route::get('especieanimal/create', 'EspecieAnimalController@create');
+Route::get('especieanimal/{id}', 'EspecieAnimalController@show');
+Route::get('especieanimal/edit/{id}', 'EspecieAnimalController@edit');
+Route::post('especieanimal/store' , 'EspecieAnimalController@store');
+Route::put('especieanimal/{id}', 'EspecieAnimalController@update');
+Route::delete('especieanimal/delete/{id}', 'EspecieAnimalController@destroy');
