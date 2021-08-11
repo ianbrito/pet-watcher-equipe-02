@@ -47,7 +47,7 @@ class UserController extends Controller
     public function updatePassword(Request $request, $user)
     {
         $users = User::find($user);
-        $users->password = $request->password;
+        $users->password = bcrypt($request->password);
         $users->save();
         return redirect(to: 'home');
     }

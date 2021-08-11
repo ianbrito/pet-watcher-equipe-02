@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav">
                      @if(auth()->check())
-                        <li class="nav-item">
+                        <li class="nav-item m">
                               <a class="nav-link" href="">Logout</a>
                         </li>
                      @endif
@@ -41,6 +41,8 @@
                               <a class="nav-link" href="#">Registre-se</a>
                         </li>
                      @endif
+
+                    @yield('update-password')
                   </ul>
             </div>
          </div>

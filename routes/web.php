@@ -12,7 +12,7 @@
 */
 
 Route::get('', function () {
-    return view('layout');
+    return view('home');
 });
 
 Route::get('/login', function () {
@@ -20,8 +20,9 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::get('/', function () {
-    return view('layout');
+    return view('home');
 })->name('home');
+
 Route::get('home', function () {
     return view('home');
 })->name('home');

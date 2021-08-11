@@ -1,4 +1,13 @@
+
+@extends('layout')
+
+@section('content')
+@section('update-password')
 @if (auth()->check())
-<nav><a href="{{route('reset/password')}}">Atualizar Senha</a></nav>
+<li class="nav-item">
+   <a class="nav-link" href="{{route('reset/password')}}">Atualizar Senha</a>
+</li>
 @endif
-Home
+@stop
+@stop
+

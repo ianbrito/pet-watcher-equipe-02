@@ -1,5 +1,4 @@
 @extends('layout')
-<?php //{{action('UserController@updatePassword', Auth::user())}} ?>
 @section('content')
 <div class="container-login">
    <h1>Pet Watcher</h1>
