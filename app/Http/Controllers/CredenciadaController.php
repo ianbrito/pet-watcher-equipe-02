@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Credenciada;
+use \App\Credenciada;
 use Illuminate\Http\Request;
 
 class CredenciadaController extends Controller
@@ -13,8 +13,10 @@ class CredenciadaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {    
+      $credenciadas = Credenciada::all();
+      dd($credenciadas);
+      return view('accredited.index', compact('credenciadas'));
     }
 
     /**
