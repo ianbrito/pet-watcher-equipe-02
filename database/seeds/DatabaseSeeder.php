@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use \App\User;
+use \App\Credenciada;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,5 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(CredenciadaSeeder::class);
     }
 }

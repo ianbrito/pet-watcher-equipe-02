@@ -38,3 +38,8 @@ Route::get('reset/password', function () {
 })->name('reset/password');
 
 Route::post('reset/password/{user}' , 'UserController@updatePassword');
+
+//Credenciadas
+Route::get('/accredited', function(){
+   return view('accredited.cadastro');
+});
