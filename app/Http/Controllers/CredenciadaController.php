@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use \App\Credenciada;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class CredenciadaController extends Controller
 {
@@ -15,7 +16,6 @@ class CredenciadaController extends Controller
     public function index()
     {    
       $credenciadas = Credenciada::all();
-      dd($credenciadas);
       return view('accredited.index', compact('credenciadas'));
     }
 
@@ -26,7 +26,7 @@ class CredenciadaController extends Controller
      */
     public function create()
     {
-        //
+        return view('accredited.create');
     }
 
     /**
@@ -37,7 +37,17 @@ class CredenciadaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form = $request;
+        $credenciada = new Credenciada();
+        $credenciada->cnpj = $form->cnpj;
+        $credenciada->inscricao_estadual = $form->inscricao_estadual;
+        $credenciada->razao_social = $form->razao_social;
+        $credenciada->telefone = $form->telefone;
+        $credenciada->email = $form->email;
+        $credenciada->endereco = $form->endereco;
+        $credenciada->save();
+        return redirect('accredited');
+
     }
 
     /**

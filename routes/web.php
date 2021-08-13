@@ -40,10 +40,6 @@ Route::get('reset/password', function () {
 Route::post('reset/password/{user}' , 'UserController@updatePassword');
 
 //Credenciadas
-Route::get('/accredited/cadastro', function(){
-   return view('accredited.create');
-});
-
-Route::get('/accredited', function(){
-   return view('accredited.index');
-});
+Route::get('/accredited', 'CredenciadaController@index');
+Route::get('/accredited/cadastro', 'CredenciadaController@create')->name('nova-credenciada');
+Route::post('/accredited/cadastro', 'CredenciadaController@store')->name('save');

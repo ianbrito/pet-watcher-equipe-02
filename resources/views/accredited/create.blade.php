@@ -4,7 +4,7 @@
 <div class="container-login">
    <h1>Cadastro de Credenciada</h1>
 <section class="login-section">
-   <form action="" method="post">
+   <form action="{{action('CredenciadaController@store')}}" method="post">
       @csrf
 
       <label>
@@ -14,12 +14,12 @@
 
       <label type="text" >
          Inscrição Estadual *
-         <input type="text" name="inscricao-estadual" placeholder="Inscrição Estadual">
+         <input type="text" name="inscricao_estadual" placeholder="Inscrição Estadual">
       </label>
 
       <label type="text" >
          Razão Social *
-         <input type="text" name="razao-social" placeholder="Razão Social">
+         <input type="text" name="razao_social" placeholder="Razão Social">
       </label>
 
       <label type="text" >
@@ -40,7 +40,7 @@
       <button type="submit">Cadastrar</button>
    </form>
 
-   @if ($errors->has('email') || $errors->has('password'))
+   @if ($errors->has('email') || $errors->has('cnpj'))
      <span class="">
          <strong>Erro ao cadastrar</strong>
      </span>
