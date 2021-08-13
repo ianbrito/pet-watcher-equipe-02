@@ -29,7 +29,7 @@
                   <ul class="navbar-nav">
                      @if(auth()->check())
                         <li class="nav-item m">
-                              <a class="nav-link" href="">Logout</a>
+                              <a class="nav-link" href="{{route('logout')}}">Logout</a>
                         </li>
                      @endif
 
