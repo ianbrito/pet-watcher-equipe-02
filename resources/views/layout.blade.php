@@ -10,6 +10,7 @@
 
    <link rel="stylesheet" href="../css/global.css">
    <link rel="stylesheet" href="../css/login/login.css">
+   <link rel="stylesheet" href="../css/credenciada/credenciada.css">
 
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,9 +20,9 @@
 </head>
 <body style="background-image:url('../fundo-home.png');background-repeat: no-repeat; ">
    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+      <nav class="navbar navbar-expand-lg navbar-light  shadow" style="width: 100%;background-color: #4649e9;">
          <div class="container">
-            <a class="navbar-brand" href="{{route('home')}}">Pet Watcher</a>
+            <a class="navbar-brand" href="{{route('home')}}" style="color: white;font-weight:bold ;">Pet Watcher</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,19 +30,19 @@
                   <ul class="navbar-nav">
                      @if(auth()->check())
                         <li class="nav-item m">
-                              <a class="nav-link" href="{{route('logout')}}">Logout</a>
+                              <a class="nav-link" style="color: white;" href="{{route('logout')}}">Logout</a>
                         </li>
                         <li class="nav-item m">
-                           <a class="nav-link" href="/credenciadas">Gerenciar Credenciadas</a>
+                           <a class="nav-link" style="color: white;" href="/credenciadas">Gerenciar Credenciadas</a>
                         </li>
                      @endif
 
                      @if(auth()->guest())
                         <li class="nav-item">
-                              <a class="nav-link" href="{{ route('login') }}">Login</a>
+                              <a class="nav-link" style="color: white;" href="{{ route('login') }}">Login</a>
                         </li>
                         <li class="nav-item">
-                              <a class="nav-link" href="#">Registre-se</a>
+                              <a class="nav-link" style="color: white;" href="#">Registre-se</a>
                         </li>
                      @endif
 

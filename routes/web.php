@@ -45,8 +45,10 @@ Route::get('/credenciadas/cadastro', 'CredenciadaController@create')->name('nova
 Route::post('/credenciadas/cadastro', 'CredenciadaController@store')->name('save');
 Route::get('/credenciadas/{id}', 'CredenciadaController@edit')->name('edit');
 Route::put('/credenciadas/{id}', 'CredenciadaController@update');
-
 Route::get('/credenciadas/{id}/info', 'CredenciadaController@show');
+
+Route::post('/credenciadas/status', 'CredenciadaController@setStatus');
+
 
 
 

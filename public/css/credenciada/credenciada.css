@@ -1,0 +1,34 @@
+.titulo-tabela {
+   margin-top: 10vh;
+   font-weight: bold;
+   font-family: 'Arimo', sans-serif;
+   color: #4649e9;
+   background-color: #C7D9D1;
+   border-radius: 10px;
+   text-align: center;
+}
+tr th {
+   border-radius: 10px;
+}
+
+table {
+   background-color: #C7D9D1;
+   border-radius: 10px;
+}
+.cadastro-cred {
+   background-color: #4649e9;
+   margin-bottom: 20px;
+   color: white;
+   font-weight: bold;
+   border-radius: 10px;
+}
+
+li button {
+   padding-left: 20px;
+   border-style: none;
+}
+
+li button:hover {
+   box-shadow: none;
+   
+}

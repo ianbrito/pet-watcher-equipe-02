@@ -104,4 +104,17 @@ class CredenciadaController extends Controller
     {
         //
     }
+
+    public function setStatus(Request $request){
+      $credenciada = Credenciada::findOrFail($request->id);
+      if($credenciada->ativo == true){
+         $credenciada->ativo = false;
+         $credenciada->save();
+         return redirect('credenciadas');
+      }else{
+         $credenciada->ativo = true;
+         $credenciada->save();
+         return redirect('credenciadas');
+      }
+    }
 }

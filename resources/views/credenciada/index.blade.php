@@ -2,38 +2,55 @@
 
 @section('content')
 
-<h1 class="display-1">Estabelecimentos Credenciados no Sistema</h1>
+@if(auth()->check())
 
-   <a class="btn btn-primary" href="/credenciadas/cadastro">Nova Credenciada</a>
+<h1 class="titulo-tabela">Estabelecimentos Credenciados</h1>
 
-   <table class="table table-striped" style="margin-top: 5vh;" >
+   <a class="btn cadastro-cred" href="/credenciadas/cadastro">Nova Credenciada</a>
 
-      <tr>
-         <th>ID</th>
-         <th>CNPJ</th>
-         <th>Inscrição Estadual</th>
-         <th>Razão Social</th>
-         <th>Telefone</th>
-         <th>E-mail</th>
-         <th>Endereço</th>
+   <table class="table table-success table-striped">
+   <thead>
+      <tr class="nome-colunas">
+         <th scope="col">ID</th>
+         <th scope="col">CNPJ</th>
+         <th scope="col">Ativo</th>
+         <th scope="col" colspan="4">Ações</th>
       </tr>
-
+   </thead>
+   <tbody>
       @foreach ($credenciadas as $credenciada)
-         <tr>
+         <tr scope="row" class="itens">
             <th>{{$credenciada->id}}</th>
             <th>{{$credenciada->cnpj}}</th>
-            <th>{{$credenciada->inscricao_estadual}}</th>
-            <th>{{$credenciada->razao_social}}</th>
-            <th>{{$credenciada->telefone}}</th>
-            <th>{{$credenciada->email}}</th>
-            <th>{{$credenciada->endereco}}</th>
-            <th><a href="/credenciadas/{{$credenciada->id}}/info">Visualizar</a></th>
-            <th><a href="/credenciadas/{{$credenciada->id}}">Editar</a></th>
-            <th><a href="">Mudar senha</a></th>
-            <th><a href="">Desativar</a></th>
+            <th>{{$credenciada->ativo}}</th>
+            <th class="dropdown">
+               <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  Ações
+               </a>
+
+               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="/credenciadas/{{$credenciada->id}}/info">Visualizar</a></li>
+                  <li><a class="dropdown-item" href="/credenciadas/{{$credenciada->id}}">Editar</a></li>
+                  <li><a class="dropdown-item" href="">Mudar senha</a></li>
+                  <li>               
+                     <form action="/credenciadas/status" method="post">
+                     @csrf
+                     <input hidden name="id" value="{{$credenciada->id}}">
+                     @if($credenciada->ativo == true)
+                        <button class=" button-table" type="submit">Desativar</button>
+                     @elseif($credenciada->ativo == false)
+                        <button class=" button-table" type="submit">Ativar</button>
+                     @endif
+                  </form>
+                  </li>
+               </ul>
+
+            </th>
          </tr>
       @endforeach
-
+      </tbody>
    </table>
 
 @stop
+
+@endif
