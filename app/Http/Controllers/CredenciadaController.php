@@ -16,7 +16,7 @@ class CredenciadaController extends Controller
     public function index()
     {    
       $credenciadas = Credenciada::all();
-      return view('accredited.index', compact('credenciadas'));
+      return view('credenciada.index', compact('credenciadas'));
     }
 
     /**
@@ -26,7 +26,7 @@ class CredenciadaController extends Controller
      */
     public function create()
     {
-        return view('accredited.create');
+        return view('credenciada.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class CredenciadaController extends Controller
         $credenciada->email = $form->email;
         $credenciada->endereco = $form->endereco;
         $credenciada->save();
-        return redirect('accredited');
+        return redirect('credenciadas');
 
     }
 
@@ -56,9 +56,10 @@ class CredenciadaController extends Controller
      * @param  \App\Credenciada  $credenciada
      * @return \Illuminate\Http\Response
      */
-    public function show(Credenciada $credenciada)
-    {
-        //
+    public function show($id)
+    { 
+      $credenciada = Credenciada::findOrFail($id);
+      return view('credenciada.show',compact('credenciada'));
     }
 
     /**
@@ -67,9 +68,10 @@ class CredenciadaController extends Controller
      * @param  \App\Credenciada  $credenciada
      * @return \Illuminate\Http\Response
      */
-    public function edit(Credenciada $credenciada)
+    public function edit($id)
     {
-        //
+      $credenciada = Credenciada::findOrFail($id);
+      return view('credenciada.edit', compact('credenciada'));
     }
 
     /**
@@ -79,9 +81,17 @@ class CredenciadaController extends Controller
      * @param  \App\Credenciada  $credenciada
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Credenciada $credenciada)
+    public function update(Request $request, $id)
     {
-        //
+        $credenciada = Credenciada::findOrFail($id);
+        $credenciada->cnpj = $request->cnpj;
+        $credenciada->inscricao_estadual = $request->inscricao_estadual;
+        $credenciada->razao_social = $request->razao_social;
+        $credenciada->telefone = $request->telefone;
+        $credenciada->email = $request->email;
+        $credenciada->endereco = $request->endereco;
+        $credenciada->save();
+        return redirect('credenciadas');
     }
 
     /**

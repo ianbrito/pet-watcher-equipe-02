@@ -4,7 +4,7 @@
 <div class="container-login">
    <h1>Cadastro de Credenciada</h1>
 <section class="login-section">
-   <form action="{{action('CredenciadaController@store')}}" method="post">
+   <form action="/credenciadas/cadastro" method="post">
       @csrf
 
       <label>

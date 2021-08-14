@@ -4,6 +4,8 @@
 
 <h1 class="display-1">Estabelecimentos Credenciados no Sistema</h1>
 
+   <a class="btn btn-primary" href="/credenciadas/cadastro">Nova Credenciada</a>
+
    <table class="table table-striped" style="margin-top: 5vh;" >
 
       <tr>
@@ -25,15 +27,13 @@
             <th>{{$credenciada->telefone}}</th>
             <th>{{$credenciada->email}}</th>
             <th>{{$credenciada->endereco}}</th>
-            <th><a href="">Visualizar</a></th>
-            <th><a href="">Editar</a></th>
+            <th><a href="/credenciadas/{{$credenciada->id}}/info">Visualizar</a></th>
+            <th><a href="/credenciadas/{{$credenciada->id}}">Editar</a></th>
             <th><a href="">Mudar senha</a></th>
             <th><a href="">Desativar</a></th>
          </tr>
       @endforeach
 
    </table>
-
-   <a class="btn btn-primary" href="{{action('CredenciadaController@create')}}">Nova Credenciada</a>
 
 @stop
