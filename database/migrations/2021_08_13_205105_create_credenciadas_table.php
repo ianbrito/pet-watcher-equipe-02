@@ -20,9 +20,8 @@ class CreateCredenciadasTable extends Migration
             $table->string('razao_social');
             $table->string('telefone');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('endereco');
-            $table->rememberToken();
+            $table->boolean('ativo')->default(true);
             $table->timestamps();
         });
     }
