@@ -32,7 +32,7 @@
                               <a class="nav-link" href="{{route('logout')}}">Logout</a>
                         </li>
                         <li class="nav-item m">
-                           <a class="nav-link" href="{{route('nova-credenciada')}}">Cadastrar Credenciada</a>
+                           <a class="nav-link" href="{{action('CredenciadaController@index')}}">Gerenciar Credenciadas</a>
                         </li>
                      @endif
 
