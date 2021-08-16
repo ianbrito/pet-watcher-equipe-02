@@ -13,7 +13,7 @@
 
 Route::get('', function () {
     return view('home');
-});
+})->middleware('auth');
 
 Route::get('/login', function () {
    return view('auth.login');
@@ -21,7 +21,7 @@ Route::get('/login', function () {
 
 Route::get('/', function () {
     return view('home');
-})->name('home');
+})->name('home')->middleware('auth');
 
 Route::get('home', function () {
     return view('home');
@@ -40,14 +40,16 @@ Route::get('reset/password', function () {
 Route::post('reset/password/{user}' , 'UserController@updatePassword');
 
 //Credenciadas
-Route::get('/credenciadas', 'CredenciadaController@index');
-Route::get('/credenciadas/cadastro', 'CredenciadaController@create')->name('nova-credenciada');
-Route::post('/credenciadas/cadastro', 'CredenciadaController@store')->name('save');
-Route::get('/credenciadas/{id}', 'CredenciadaController@edit')->name('edit');
-Route::put('/credenciadas/{id}', 'CredenciadaController@update');
-Route::get('/credenciadas/{id}/info', 'CredenciadaController@show');
 
-Route::post('/credenciadas/status', 'CredenciadaController@setStatus');
+Route::middleware('auth')->group(function () {
+   Route::get('/credenciadas',           'CredenciadaController@index');
+   Route::get('/credenciadas/cadastro',  'CredenciadaController@create')->name('nova-credenciada');
+   Route::post('/credenciadas/cadastro', 'CredenciadaController@store')->name('save');
+   Route::get('/credenciadas/{id}',      'CredenciadaController@edit')->name('edit');
+   Route::put('/credenciadas/{id}',      'CredenciadaController@update');
+   Route::get('/credenciadas/{id}/info', 'CredenciadaController@show');
+   Route::post('/credenciadas/status',   'CredenciadaController@setStatus');
+});
 
 
 

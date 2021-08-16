@@ -2,7 +2,7 @@
 
 @section('content')
 
-@if(auth()->check())
+
 
 <h1 class="titulo-tabela">Estabelecimentos Credenciados</h1>
 
@@ -37,9 +37,9 @@
                      @csrf
                      <input hidden name="id" value="{{$credenciada->id}}">
                      @if($credenciada->ativo == true)
-                        <button class=" button-table" type="submit">Desativar</button>
+                        <button class="dropdown-item" type="submit">Desativar</button>
                      @elseif($credenciada->ativo == false)
-                        <button class=" button-table" type="submit">Ativar</button>
+                        <button class="dropdown-item" type="submit">Ativar</button>
                      @endif
                   </form>
                   </li>
@@ -53,4 +53,3 @@
 
 @stop
 
-@endif
