@@ -26,15 +26,16 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div style="flex-direction: row-reverse" class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav">
                      @if(auth()->check())
                         <li class="nav-item m">
                               <a class="nav-link" style="color: white;" href="{{route('logout')}}">Logout</a>
                         </li>
-                        <li class="nav-item m">
-                           <a class="nav-link" style="color: white;" href="/credenciadas">Gerenciar Credenciadas</a>
+                        <li class="nav-item">
+                           <a class="nav-link" href="{{route('reset/password')}}" style="color: white;">Atualizar Senha</a>
                         </li>
+                        @yield('update-password')
                      @endif
 
                      @if(auth()->guest())
@@ -46,7 +47,7 @@
                         </li>
                      @endif
 
-                    @yield('update-password')
+                  
                   </ul>
             </div>
          </div>
