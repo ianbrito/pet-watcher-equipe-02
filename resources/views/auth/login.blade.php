@@ -20,7 +20,7 @@
          <button type="submit">Logar</button>
       </form>
 
-      @if ($errors->has('email') || $errors->has('password'))
+      @if ($errors->has('login') || $errors->has('password'))
         <span class="">
             <strong>Erro ao logar</strong>
         </span>
