@@ -8,8 +8,8 @@
       <form action=" {{action('Auth\LoginController@Login')}} " method="post">
          @csrf
          <label>
-            Email *
-            <input type="text" type="email" name="email" placeholder="login">
+            Login *
+            <input type="text" name="login" placeholder="login">
          </label>
 
          <label>

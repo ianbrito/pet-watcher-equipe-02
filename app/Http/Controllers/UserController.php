@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     function __construct()
     {
-        $this->middleware(middleware:'auth');
+        $this->middleware('auth');
     }
 
     public function index()
@@ -49,7 +49,7 @@ class UserController extends Controller
         $users = User::find($user);
         $users->password = bcrypt($request->password);
         $users->save();
-        return redirect(to: 'home');
+        return redirect('home');
     }
 
     public function destroy($id)

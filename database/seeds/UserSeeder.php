@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Lean',
                 'tipo_conta' => '1',
+                'login' => 'email',
                 'email' => 'l@gmail.com',
                 'password' => bcrypt('123'),
             ]
@@ -26,6 +27,7 @@ class UserSeeder extends Seeder
          [
              'name' => 'Octacílio',
              'tipo_conta' => '2',
+             'login' => 'cnpj',
              'email' => 'octa.oca44@gmail.com',
              'password' => bcrypt('444'),
          ]
@@ -34,6 +36,7 @@ class UserSeeder extends Seeder
       [
           'name' => 'Marcos',
           'tipo_conta' => '3',
+          'login' => 'email',
           'email' => 'mhx.g44@gmail.com',
           'password' => bcrypt('222'),
       ]
