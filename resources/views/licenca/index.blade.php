@@ -2,7 +2,11 @@
 @section('content')
 
    <h1 class="titulo-tabela"></h1>
-   <a class="btn cadastro-cred" href="/licencas/cadastro"> Cadastrar Licença</a>
+   <div style="display: flex; flex-direction: row-reverse;">
+      <a class="btn cadastro-cred" href="/licencas/cadastro"> Cadastrar Licença</a>
+      <a style="margin-right: 20px" class="btn cadastro-cred" href=""> Revogar Licença</a>
+   </div>
+
    <table class="table">
    <thead>
       <tr class="nome-colunas">
