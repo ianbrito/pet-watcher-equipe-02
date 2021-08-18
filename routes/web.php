@@ -57,5 +57,10 @@ Route::group(['middleware' => ['auth','check.adm.account']], function(){
   
 });
 
+//licencas
+Route::group(['middleware' => ['auth','check.adm.account']], function(){
 
+   Route::get('/licencas/cadastro','LicencaController@create'); // Formulario
+  
+});
 

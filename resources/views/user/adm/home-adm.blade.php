@@ -25,6 +25,7 @@
             <a href="" class="btn btn-primary">Gerenciar</a>
          </div>
       </div>
+      <a href="/licencas/cadastro" class="btn btn-primary">cadastrar licença</a>
 </div>
 
 @endsection
