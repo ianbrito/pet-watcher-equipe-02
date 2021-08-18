@@ -5,6 +5,7 @@
    flex-direction: column;
    justify-content: left;
    align-items: flex-end;
+   margin-bottom: 20px;
 }
 
 .container-login h1 {
@@ -13,7 +14,7 @@
    border-top-right-radius: 8px;
    width: 382px;
    text-align: center;
-   background-color: rgb(20, 87, 212);
+   background-color: #4649e9;
    margin: 0;
    color: white;
 }
@@ -72,7 +73,7 @@
       font-size: 15px;
       border-radius: 8px;
       margin-top: 1vh;
-      background-color: rgb(20, 87, 212);
+      background-color: #4649e9;
       font-weight: bold;
       color: white;
       border-style: none;

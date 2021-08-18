@@ -57,7 +57,10 @@ class CredenciadaController extends Controller
         $user->password = bcrypt(substr($form->cnpj,0,-6));
         $user->save();
 
-        return redirect('credenciadas');
+        $login = $form->cnpj;
+        $password = substr($form->cnpj,0,-6);
+
+        return view('credenciada.acesso-cred',compact('login','password'));
 
     }
 
@@ -127,5 +130,13 @@ class CredenciadaController extends Controller
          $credenciada->save();
          return redirect('credenciadas');
       }
+    }
+
+    // Mostra dados para login
+    public function acessoCred($id){
+       $user = User::findOrFail($id);
+       $login = $user->login;
+       $password = $user->password;
+       return view('credenciada.acesso-cred',compact('login','password'));
     }
 }

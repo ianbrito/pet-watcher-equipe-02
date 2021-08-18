@@ -48,16 +48,14 @@ Route::group(['middleware' => ['auth','check.adm.account']], function(){
    Route::post('/credenciadas/status',   'CredenciadaController@setStatus');
 });
 
-//Cadastro
+//ADM
 Route::group(['middleware' => ['auth','check.adm.account']], function(){
-   Route::get('/users/cadastro',           'UserController@create');
-   Route::post('/users/cadastro',           'UserController@store');
-   Route::get('/home-adm',function(){ return view('home-adm'); });
+   Route::get('/users/cadastro',           'UserController@create'); // Formulario
+   Route::post('/users/cadastro',           'UserController@store'); // Salva no banco
+   Route::get('/home-adm',function(){ return view('home-adm'); }); //Home específica do adm
+   Route::get('/acesso/{id}','CredenciadaController@acessoCred');
+  
 });
-
-
-
-
 
 
 

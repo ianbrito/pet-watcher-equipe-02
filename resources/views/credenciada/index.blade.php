@@ -4,15 +4,15 @@
 
 
 
-<h1 class="titulo-tabela">Estabelecimentos Credenciados</h1>
+<h1 class="titulo-tabela"></h1>
 
    <a class="btn cadastro-cred" href="/credenciadas/cadastro">Nova Credenciada</a>
 
-   <table class="table table-success table-striped">
+   <table class="table">
    <thead>
       <tr class="nome-colunas">
          <th scope="col">ID</th>
-         <th scope="col">CNPJ</th>
+         <th scope="col">Razão Social</th>
          <th scope="col">Ativo</th>
          <th scope="col" colspan="4">Ações</th>
       </tr>
@@ -21,7 +21,7 @@
       @foreach ($credenciadas as $credenciada)
          <tr scope="row" class="itens">
             <th>{{$credenciada->id}}</th>
-            <th>{{$credenciada->cnpj}}</th>
+            <th>{{$credenciada->razao_social}}</th>
             <th>{{$credenciada->ativo}}</th>
             <th class="dropdown">
                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -31,7 +31,7 @@
                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                   <li><a class="dropdown-item" href="/credenciadas/{{$credenciada->id}}/info">Visualizar</a></li>
                   <li><a class="dropdown-item" href="/credenciadas/{{$credenciada->id}}">Editar</a></li>
-                  <li><a class="dropdown-item" href="">Mudar senha</a></li>
+                  <li><a class="dropdown-item" href="reset/password/credenciadas">Mudar senha</a></li>
                   <li>               
                      <form action="/credenciadas/status" method="post">
                      @csrf
@@ -44,7 +44,6 @@
                   </form>
                   </li>
                </ul>
-
             </th>
          </tr>
       @endforeach

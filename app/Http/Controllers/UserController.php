@@ -62,6 +62,7 @@ class UserController extends Controller
         return redirect('home');
     }
 
+
     public function destroy($id)
     {
         //

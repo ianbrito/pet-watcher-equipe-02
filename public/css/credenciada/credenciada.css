@@ -3,17 +3,24 @@
    font-weight: bold;
    font-family: 'Arimo', sans-serif;
    color: #4649e9;
-   background-color: #C7D9D1;
    border-radius: 10px;
    text-align: center;
 }
-tr th {
-   border-radius: 10px;
+
+.nome-colunas {
+   background-color: #4649e9;
+   color: white;
+   font-weight: bold;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
 }
 
 table {
-   background-color: #C7D9D1;
-   border-radius: 10px;
+
+}
+
+tbody {
+   background-color: #d4d4ec;
 }
 .cadastro-cred {
    background-color: #4649e9;
@@ -23,12 +30,8 @@ table {
    border-radius: 10px;
 }
 
-li button {
-   padding-left: 20px;
-   border-style: none;
-}
+
 
 li button:hover {
    box-shadow: none;
-   
 }
