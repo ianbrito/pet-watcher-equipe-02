@@ -22,6 +22,26 @@ Route::get('', 'HomeController@index')->name('home')->middleware('auth');
 // })->name('login');
 
 
+
+Route::get('', function () {
+    return view('home');
+});
+
+Route::get('/login', function () {
+   return view('auth.login');
+})->name('login');
+
+Route::get('/', function () {
+    return view('home');
+})->name('home');
+
+Route::get('home', function () {
+    return view('home');
+})->name('home');
+
+
+
+
 Route::get('home', 'HomeController@index')->name('home')->middleware('auth');
 
 //Login
@@ -54,7 +74,7 @@ Route::group(['middleware' => ['auth','check.adm.account']], function(){
    Route::post('/users/cadastro',           'UserController@store'); // Salva no banco
    Route::get('/home-adm',function(){ return view('home-adm'); }); //Home específica do adm
    Route::get('/acesso/{id}','CredenciadaController@acessoCred');
-  
+
 });
 
 //licencas
@@ -62,11 +82,20 @@ Route::group(['middleware' => ['auth','check.adm.account']], function(){
    Route::get('/licencas','LicencaController@index'); // lista todas as licencas
    Route::get('/licencas/cadastro','LicencaController@create'); // Formulario
    Route::post('/licencas/cadastro','LicencaController@store'); // Salva n o banco
-   Route::get('/licencas/{id}','LicencaController@show'); // 
-   Route::put('/licencas/{id}','LicencaController@edit'); // 
+   Route::get('/licencas/{id}','LicencaController@show'); //
+   Route::put('/licencas/{id}','LicencaController@edit'); //
    Route::put('/licencas/edit','LicencaController@update'); //
-   Route::patch('/licencas/status','LicencaController@setStatus'); // 
+   Route::patch('/licencas/status','LicencaController@setStatus'); //
 
-   
+
 });
 
+
+// Especie Animal
+Route::get('especieanimal', 'EspecieAnimalController@index') ;
+Route::get('especieanimal/create', 'EspecieAnimalController@create');
+Route::get('especieanimal/{id}', 'EspecieAnimalController@show');
+Route::get('especieanimal/edit/{id}', 'EspecieAnimalController@edit');
+Route::post('especieanimal/store' , 'EspecieAnimalController@store');
+Route::put('especieanimal/{id}', 'EspecieAnimalController@update');
+Route::delete('especieanimal/delete/{id}', 'EspecieAnimalController@destroy');
