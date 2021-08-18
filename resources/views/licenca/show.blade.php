@@ -16,8 +16,8 @@
          <tr scope="row" class="itens">
             <th>{{$licenca->id}}</th>
             <th>{{$licenca->cnpj}}</th>
-            <th>{{$licenca->data_licenciamento}}</th>
-            <th>{{$licenca->data_vencimento}}</th>
+            <th>{{$licenca->data_licenciamento->format('d/m/Y')}}</th>
+            <th>{{$licenca->data_vencimento->format('d/m/Y')}}</th>
             <th>{{$licenca->ativo}}</th>
          </tr>
       </tbody>

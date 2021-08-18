@@ -9,32 +9,32 @@
       {{ method_field('put') }}
       <label>
          CNPJ *
-         <input value={{$credenciada->cnpj}} type="text" name="cnpj" placeholder="CNPJ">
+         <input value="{{$credenciada->cnpj}}" type="text" name="cnpj" placeholder="CNPJ">
       </label>
 
       <label type="text" >
          Inscrição Estadual *
-         <input value={{$credenciada->inscricao_estadual}} type="text" name="inscricao_estadual" placeholder="Inscrição Estadual">
+         <input value="{{$credenciada->inscricao_estadual}}" type="text" name="inscricao_estadual" placeholder="Inscrição Estadual">
       </label>
 
       <label type="text" >
          Razão Social *
-         <input value={{$credenciada->razao_social}} type="text" name="razao_social" placeholder="Razão Social">
+         <input value="{{$credenciada->razao_social}}" type="text" name="razao_social" placeholder="Razão Social">
       </label>
 
       <label type="text" >
          Telefone *
-         <input value={{$credenciada->telefone}} type="text" name="telefone" placeholder="Telefone">
+         <input value="{{$credenciada->telefone}}" type="text" name="telefone" placeholder="Telefone">
       </label>
 
       <label>
          E-mail *
-         <input value={{$credenciada->email}} type="text" type="email" name="email" placeholder="E-mail">
+         <input value="{{$credenciada->email}}" type="text" type="email" name="email" placeholder="E-mail">
       </label>
 
       <label type="text" >
          Endereço *
-         <input value={{$credenciada->endereco}} type="text" name="endereco" placeholder="Endereço">
+         <input value="{{$credenciada->endereco}}" type="text" name="endereco" placeholder="Endereço">
       </label>
 
       <button type="submit">Salvar Alterações</button>
