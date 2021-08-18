@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use \App\Credenciada;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use \App\Http\Controllers\UserController;
+use \App\User;
 
 class CredenciadaController extends Controller
 {
@@ -46,6 +48,15 @@ class CredenciadaController extends Controller
         $credenciada->email = $form->email;
         $credenciada->endereco = $form->endereco;
         $credenciada->save();
+
+        $user = new User();
+        $user->tipo_conta = $form->tipo_conta;
+        $user->login = $form->cnpj;
+        $user->name = $form->razao_social;
+        $user->email = $form->email;
+        $user->password = bcrypt(substr($form->cnpj,0,-6));
+        $user->save();
+
         return redirect('credenciadas');
 
     }

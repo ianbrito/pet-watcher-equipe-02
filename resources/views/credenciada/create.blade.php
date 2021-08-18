@@ -4,8 +4,10 @@
 <div class="container-login">
    <h1>Cadastro de Credenciada</h1>
 <section class="login-section">
-   <form action="/credenciadas/cadastro" method="post">
+   <form action="{{action('CredenciadaController@store')}}" method="post">
       @csrf
+      
+      <input hidden name="tipo_conta" type="text" value="2">
 
       <label>
          CNPJ *

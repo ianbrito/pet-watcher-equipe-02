@@ -19,15 +19,25 @@ class UserController extends Controller
     }
 
 
-    public function create()
-    {
-        //
-    }
+   public function create(Request $request)
+   {
+      return view('user.adm.create-user');
+   }
 
     public function store(Request $request)
     {
-        //
+      $form = $request;
+      $user = new User();
+      $user->tipo_conta = $form->tipo_conta;
+      $user->login = $form->login;
+      $user->name = $form->nome;
+      $user->email = $form->email;
+      $user->password = $form->senha;
+      $user->save();
+      return redirect('');
     }
+
+
 
     public function show($id)
     {

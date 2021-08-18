@@ -48,9 +48,13 @@ Route::group(['middleware' => ['auth','check.adm.account']], function(){
    Route::post('/credenciadas/status',   'CredenciadaController@setStatus');
 });
 
-Route::get('/home-adm',function(){
-   return view('home-adm');
+//Cadastro
+Route::group(['middleware' => ['auth','check.adm.account']], function(){
+   Route::get('/users/cadastro',           'UserController@create');
+   Route::post('/users/cadastro',           'UserController@store');
+   Route::get('/home-adm',function(){ return view('home-adm'); });
 });
+
 
 
 
