@@ -4,9 +4,9 @@
 <div class="container-login">
    <h1>Editar Licença</h1>
 <section class="login-section">
-   <form action="{{action('LicencaController@store')}}" method="post">
+   <form action="{{action('LicencaController@update',$licenca->id)}}" method="post">
       @csrf
-      
+      @method('put')
       <input hidden name="tipo_conta" type="text" value="2">
 
       <label>
@@ -16,12 +16,12 @@
 
       <label type="text" >
          Data Licenciamento *
-         <input type="date" value="{{$licenca->data_licenciamento}}" name="data_licenciamento" placeholder="Data Licenciamento" required>
+         <input type="date" value="{{$licenca->data_licenciamento->format('Y-m-d')}}" name="data_licenciamento" placeholder="Data Licenciamento" required>
       </label>
 
       <label type="text" >
          Data Vencimento *
-         <input type="date" value="{{$licenca->data_vencimento}}" name="data_vencimento" placeholder="Data Vencimento" required>
+         <input type="date" value="{{$licenca->data_vencimento->format('Y-m-d')}}" name="data_vencimento" placeholder="Data Vencimento" required>
       </label>
 
       <button type="submit">Editar</button>

@@ -64,7 +64,7 @@ Route::group(['middleware' => ['auth','check.adm.account']], function(){
    Route::post('/licencas/cadastro','LicencaController@store'); // Salva n o banco
    Route::get('/licencas/{id}','LicencaController@show'); // 
    Route::put('/licencas/{id}','LicencaController@edit'); // 
-   Route::put('/licencas/edit','LicencaController@update'); //
+   Route::put('/licencas/edit/{id}','LicencaController@update'); //
    Route::patch('/licencas/status','LicencaController@setStatus'); // 
 
    
