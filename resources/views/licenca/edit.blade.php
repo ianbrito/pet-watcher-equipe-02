@@ -16,12 +16,12 @@
 
       <label type="text" >
          Data Licenciamento *
-         <input type="text" value="{{$licenca->data_licenciamento}}" name="data_licenciamento" placeholder="Data Licenciamento" required>
+         <input type="date" value="{{$licenca->data_licenciamento}}" name="data_licenciamento" placeholder="Data Licenciamento" required>
       </label>
 
       <label type="text" >
          Data Vencimento *
-         <input type="text" value="{{$licenca->data_vencimento}}" name="data_vencimento" placeholder="Data Vencimento" required>
+         <input type="date" value="{{$licenca->data_vencimento}}" name="data_vencimento" placeholder="Data Vencimento" required>
       </label>
 
       <button type="submit">Editar</button>

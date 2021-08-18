@@ -16,12 +16,12 @@
 
       <label type="text" >
          Data Licenciamento *
-         <input type="text" name="data_licenciamento" placeholder="Data Licenciamento" required>
+         <input type="date" name="data_licenciamento" placeholder="Data Licenciamento" required>
       </label>
 
       <label type="text" >
          Data Vencimento *
-         <input type="text" name="data_vencimento" placeholder="Data Vencimento" required>
+         <input type="date" name="data_vencimento" placeholder="Data Vencimento" required>
       </label>
 
       <button type="submit">Cadastrar</button>
