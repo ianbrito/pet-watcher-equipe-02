@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Licenca;
 use Illuminate\Http\Request;
+use LicencaSeeder;
 
 class LicencaController extends Controller
 {
@@ -13,8 +14,9 @@ class LicencaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    { 
+      $licencas = Licenca::all();
+      return view('licenca.index',compact('licencas'));
     }
 
     /**
@@ -35,7 +37,13 @@ class LicencaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $licenca = new Licenca();
+        $licenca->data_licenciamento = $request->data_licenciamento;
+        $licenca->data_vencimento = $request->data_vencimento;
+        $licenca->cnpj = $request->cnpj;
+        $licenca->save();
+        return redirect('licencas');
+
     }
 
     /**
@@ -44,9 +52,10 @@ class LicencaController extends Controller
      * @param  \App\Licenca  $licenca
      * @return \Illuminate\Http\Response
      */
-    public function show(Licenca $licenca)
+    public function show($id)
     {
-        //
+        $licenca = Licenca::findOrFail($id);
+        return view('licenca.show',compact('licenca'));
     }
 
     /**
@@ -55,9 +64,10 @@ class LicencaController extends Controller
      * @param  \App\Licenca  $licenca
      * @return \Illuminate\Http\Response
      */
-    public function edit(Licenca $licenca)
+    public function edit(Request $request)
     {
-        //
+       $licenca = Licenca::findOrFail($request->id);
+        return view('licenca.edit',compact('licenca'));
     }
 
     /**
@@ -67,9 +77,14 @@ class LicencaController extends Controller
      * @param  \App\Licenca  $licenca
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Licenca $licenca)
+    public function update(Request $request,$id)
     {
-        //
+      $licenca = Licenca::findOrFail($id);
+      $licenca->cnpj = $request->cnpj;
+      $licenca->data_licenciamento = $request->data_licenciamento;
+      $licenca->data_vencimento = $request->data_vencimento;
+      $licenca->save();
+      return redirect('licencas');
     }
 
     /**
@@ -81,5 +96,19 @@ class LicencaController extends Controller
     public function destroy(Licenca $licenca)
     {
         //
+    }
+
+    //
+    public function setStatus(Request $request){
+      $licenca = Licenca::findOrFail($request->id);
+      if($licenca->ativo == true){
+         $licenca->ativo = false;
+         $licenca->save();
+         return redirect('licencas');
+      }else{
+         $licenca->ativo = true;
+         $licenca->save();
+         return redirect('licencas');
+      }
     }
 }

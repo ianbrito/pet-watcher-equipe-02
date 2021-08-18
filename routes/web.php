@@ -59,8 +59,14 @@ Route::group(['middleware' => ['auth','check.adm.account']], function(){
 
 //licencas
 Route::group(['middleware' => ['auth','check.adm.account']], function(){
-
+   Route::get('/licencas','LicencaController@index'); // lista todas as licencas
    Route::get('/licencas/cadastro','LicencaController@create'); // Formulario
-  
+   Route::post('/licencas/cadastro','LicencaController@store'); // Salva n o banco
+   Route::get('/licencas/{id}','LicencaController@show'); // 
+   Route::put('/licencas/{id}','LicencaController@edit'); // 
+   Route::put('/licencas/edit','LicencaController@update'); //
+   Route::patch('/licencas/status','LicencaController@setStatus'); // 
+
+   
 });
 

@@ -22,10 +22,10 @@
          <div class="card-body">
             <h5 class="card-title">Gerenciar Licenças</h5>
             <p class="card-text">Acesso ao cadastramento de licenças para estabelecimentos credenciados.</p>
-            <a href="" class="btn btn-primary">Gerenciar</a>
+            <a href="/licencas" class="btn btn-primary">Gerenciar</a>
          </div>
       </div>
-      <a href="/licencas/cadastro" class="btn btn-primary">cadastrar licença</a>
+      
 </div>
 
 @endsection
