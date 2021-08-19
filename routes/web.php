@@ -23,26 +23,14 @@ Route::get('', 'HomeController@index')->name('home')->middleware('auth');
 
 
 
-Route::get('', function () {
-    return view('home');
-});
+Route::get('', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::get('/login', function () {
    return view('auth.login');
 })->name('login');
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
 
-Route::get('home', function () {
-    return view('home');
-})->name('home');
-
-
-
-
-Route::get('home', 'HomeController@index')->name('home')->middleware('auth');
+// Route::get('home', 'HomeController@index')->name('home')->middleware('auth');
 
 //Login
 Route::get('login' , 'Auth\LoginController@showLoginForm') -> name('login');
