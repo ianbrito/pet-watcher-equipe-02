@@ -35,7 +35,7 @@
                         <li class="nav-item">
                            <a class="nav-link" href="{{route('reset/password')}}" style="color: white;">Atualizar Senha</a>
                         </li>
-                        @yield('update-password')
+                        {{-- @yield('update-password') --}}
                      @endif
 
                      @if(auth()->guest())
@@ -47,7 +47,7 @@
                         </li>
                      @endif
 
-                  
+
                   </ul>
             </div>
          </div>
