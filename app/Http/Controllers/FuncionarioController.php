@@ -14,7 +14,8 @@ class FuncionarioController extends Controller
      */
     public function index()
     {
-        //
+        $funcionarios = Funcionario::all();
+        return view('funcionario.index', compact('funcionarios'));
     }
 
     /**
@@ -25,6 +26,7 @@ class FuncionarioController extends Controller
     public function create()
     {
         //
+        return view(view:'funcionario.create');
     }
 
     /**
@@ -36,6 +38,14 @@ class FuncionarioController extends Controller
     public function store(Request $request)
     {
         //
+        $funcionario = new Funcionario();
+        $funcionario->cpf_f = $request->cpf;
+        $funcionario->nome_f = $request->nome;
+        $funcionario->telefone_f = $request->telefone;
+        $funcionario->email_f = $request->email;
+        $funcionario->endereco_f = $request->endereco;
+        $funcionario->save();
+        return redirect(to:'funcionario');
     }
 
     /**
@@ -44,9 +54,11 @@ class FuncionarioController extends Controller
      * @param  \App\Funcionario  $funcionario
      * @return \Illuminate\Http\Response
      */
-    public function show(Funcionario $funcionario)
+    public function show($id)
     {
         //
+        $funcionario = Funcionario::find($id);
+        return view('funcionario.show', compact('funcionario'));
     }
 
     /**
@@ -55,9 +67,11 @@ class FuncionarioController extends Controller
      * @param  \App\Funcionario  $funcionario
      * @return \Illuminate\Http\Response
      */
-    public function edit(Funcionario $funcionario)
+    public function edit($id)
     {
         //
+        $funcionario = Funcionario::find($id);
+        return view('funcionario.edit', compact('funcionario'));
     }
 
     /**
@@ -67,9 +81,17 @@ class FuncionarioController extends Controller
      * @param  \App\Funcionario  $funcionario
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Funcionario $funcionario)
+    public function update(Request $request, $id)
     {
         //
+        $funcionario = Funcionario::find($id);
+        $funcionario->cpf_f = $request->cpf;
+        $funcionario->nome_f = $request->nome;
+        $funcionario->telefone_f = $request->telefone;
+        $funcionario->email_f = $request->email;
+        $funcionario->endereço_f = $request->endereço;
+        $funcionario->save();
+        return redirect(to:'funcionario');
     }
 
     /**
@@ -78,8 +100,11 @@ class FuncionarioController extends Controller
      * @param  \App\Funcionario  $funcionario
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Funcionario $funcionario)
+    public function destroy($id)
     {
         //
+        $funcionario = Funcionario::find($id);
+        $funcionario->delete();
+        return redirect(to:'funcionario');
     }
 }
