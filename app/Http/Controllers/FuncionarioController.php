@@ -84,12 +84,12 @@ class FuncionarioController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $funcionario = Funcionario::find($id);
+        $funcionario = Funcionario::findOrFail($id);
         $funcionario->cpf_f = $request->cpf;
         $funcionario->nome_f = $request->nome;
         $funcionario->telefone_f = $request->telefone;
         $funcionario->email_f = $request->email;
-        $funcionario->endereço_f = $request->endereço;
+        $funcionario->endereco_f = $request->endereco;
         $funcionario->save();
         return redirect(to:'funcionario');
     }

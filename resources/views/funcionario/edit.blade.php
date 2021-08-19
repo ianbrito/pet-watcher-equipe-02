@@ -4,32 +4,33 @@
 <div class="container-login">
    <h1>Editar Funcionario</h1>
 <section class="login-section">
-        <form action=" {{action('FuncionarioController@update', $funcionario->id )}} " method="post">
+        <form action=" {{action('FuncionarioController@update',$funcionario->id )}} " method="post">
             @csrf
-            {{method_field('put')}}
+            @method('put')
+            <input hidden name="" type="text" value="1">
             <label>
                 Cpf *
-                <input type="text" value="{{$funcionarios->cpf_f}}" name="cpf" required>
+                <input type="text" value="{{$funcionario->cpf_f}}" name="cpf" required>
              </label>
 
              <label type="text" >
                 Nome *
-                <input type="text" value="{{$funcionarios->nome_f}}" name="nome" required>
+                <input type="text" value="{{$funcionario->nome_f}}" name="nome" required>
              </label>
 
              <label type="text" >
                 Telefone *
-                <input type="text" value="{{$funcionarios->telefone_f}}" name="telefone" required>
+                <input type="text" value="{{$funcionario->telefone_f}}" name="telefone" required>
              </label>
 
              <label type="text" >
                 Telefone *
-                <input type="text" value="{{$funcionarios->email_f}}" name="email" required>
+                <input type="text" value="{{$funcionario->email_f}}" name="email" required>
              </label>
 
              <label type="text" >
                 Telefone *
-                <input type="text" value="{{$funcionarios->endereco_f}}" name="endereco" required>
+                <input type="text" value="{{$funcionario->endereco_f}}" name="endereco" required>
              </label>
              <button type="submit">Editar</button>
         </form>

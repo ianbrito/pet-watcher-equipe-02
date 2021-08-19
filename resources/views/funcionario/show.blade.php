@@ -26,7 +26,7 @@
    </table>
 
    <div style="display: flex; flex-direction: row-reverse"  class="container">
-      <form action="/funcionario/{{$funcionario->id}}" method="post">
+      <form action="/funcionario/edit/{{$funcionario}}" method="post">
          @csrf
          @method('put')
          <input type="text" hidden name="id" value="{{$funcionario->id}}">

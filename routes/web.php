@@ -78,7 +78,7 @@ Route::group(['middleware' => ['auth','check.adm.account']], function(){
 });
 
 //licencas
-Route::group(['middleware' => ['auth','check.adm.account']], function(){
+// Route::group(['middleware' => ['auth','check.adm.account']], function(){
    Route::get('/licencas','LicencaController@index'); // lista todas as licencas
    Route::get('/licencas/cadastro','LicencaController@create'); // Formulario
    Route::post('/licencas/cadastro','LicencaController@store'); // Salva n o banco
@@ -87,7 +87,7 @@ Route::group(['middleware' => ['auth','check.adm.account']], function(){
    Route::put('/licencas/edit/{id}','LicencaController@update'); //
    Route::patch('/licencas/status','LicencaController@setStatus'); //
 
-});
+// });
 
 
 // Especie Animal
@@ -105,10 +105,9 @@ Route::delete('especieanimal/delete/{id}', 'EspecieAnimalController@destroy');
     Route::get('funcionario', 'FuncionarioController@index') ;
     Route::get('funcionario/create', 'FuncionarioController@create');
     Route::get('funcionario/{id}', 'FuncionarioController@show');
-    Route::get('funcionario/edit/{id}', 'FuncionarioController@edit');
-    Route::post('funcionario/store' , 'FuncionarioController@store');
-    Route::put('funcionario/{id}', 'FuncionarioController@update');
-    Route::delete('funcionario/delete/{id}', 'FuncionarioController@destroy');
-
+    Route::get('funcionario/{id}', 'FuncionarioController@edit');
+    Route::post('funcionario/create' , 'FuncionarioController@store');
+    Route::put('funcionario/edit/{id}', 'FuncionarioController@update');
+    // Route::delete('funcionario/delete/{id}', 'FuncionarioController@destroy');
 
 //  });
