@@ -9,7 +9,7 @@ class EspecieAnimalController extends Controller
 {
     function __construct()
     {
-        $this->middleware(middleware:'auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -31,7 +31,7 @@ class EspecieAnimalController extends Controller
     public function create()
     {
         //
-        return view(view:'especieanimal.create');
+        return view('especieanimal.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class EspecieAnimalController extends Controller
         $especie_animal = new EspecieAnimal();
         $especie_animal->descricao = $request->descricao;
         $especie_animal->save();
-        return redirect(to:'especieanimal');
+        return redirect('especieanimal');
     }
 
     /**
@@ -88,7 +88,7 @@ class EspecieAnimalController extends Controller
         $especie_animal = EspecieAnimal::find($id);
         $especie_animal->descricao = $request->descricao;
         $especie_animal->save();
-        return redirect(to:'especieanimal');
+        return redirect('especieanimal');
 
     }
 
@@ -103,6 +103,6 @@ class EspecieAnimalController extends Controller
         //
         $especie_animal = EspecieAnimal::find($id);
         $especie_animal->delete();
-        return redirect(to:'especieanimal');
+        return redirect('especieanimal');
     }
 }
