@@ -111,4 +111,9 @@ class LicencaController extends Controller
          return redirect('licencas');
       }
     }
+
+    public function getLicencas(Request $request){
+       $licencas = Licenca::findOrFail($request->cnpj);
+       return view('licenca.licencas-revogacao',compact('licencas'));
+    }
 }
