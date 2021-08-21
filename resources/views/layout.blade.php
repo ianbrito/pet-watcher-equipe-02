@@ -10,6 +10,7 @@
 
    <link rel="stylesheet" href="./global.css">
    <link rel="stylesheet" href="../css/login/login.css">
+   <link rel="stylesheet" href="../css/licenca/licenca.css">
    <link rel="stylesheet" href="../css/credenciada/credenciada.css">
 
    <link rel="preconnect" href="https://fonts.googleapis.com">

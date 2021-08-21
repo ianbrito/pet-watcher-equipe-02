@@ -15,6 +15,8 @@ class CreateLicencasTable extends Migration
     {
         Schema::create('licencas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('id_credenciada');
+            $table->foreign('id_credenciada')->references('id')->on('credenciadas');
             $table->date('data_licenciamento');
             $table->date('data_vencimento');
             $table->boolean('ativo')->default(true);
