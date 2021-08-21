@@ -15,7 +15,7 @@ class CreateCredenciadasTable extends Migration
     {
         Schema::create('credenciadas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('cnpj');
+            $table->string('cnpj')->unique();
             $table->string('inscricao_estadual');
             $table->string('razao_social');
             $table->string('telefone');
