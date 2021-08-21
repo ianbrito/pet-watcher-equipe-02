@@ -4,7 +4,7 @@
 <div class="container-login">
    <h1>Formulario de Revogaçao</h1>
       <section class="login-section">
-         <form action="{{action('LicencaController@getLicencas')}}" method="post">
+         <form action="{{action('LicencaController@getLicencas')}}" method="get">
             @csrf
             <label>
                CNPJ *

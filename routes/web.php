@@ -76,7 +76,7 @@ Route::group(['middleware' => ['auth','check.adm.account']], function(){
    Route::patch('/licencas/status','LicencaController@setStatus'); // 
 
    Route::get('/revog', 'LicencaController@formRevog');
-   Route::post('/revogacao','LicencaController@getLicencas');
+   Route::get('/revogacao','LicencaController@getLicencas');
    Route::get('/licencas-revogacao',function(){ return view('licenca.licencas-revogacao');});
    
 

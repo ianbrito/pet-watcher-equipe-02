@@ -110,7 +110,8 @@ class LicencaController extends Controller
          $licenca->ativo = true;
          $licenca->save();
          $licencas = Licenca::where('cnpj',$request->cnpj)->get();
-         return view('licenca.licencas-revogacao',compact('licencas'));
+         return redirect()->back();
+         //return view('licenca.licencas-revogacao',compact('licencas'));
       }
     }
     public function formRevog(){
