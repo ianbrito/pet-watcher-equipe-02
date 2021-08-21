@@ -75,10 +75,10 @@ Route::group(['middleware' => ['auth','check.adm.account']], function(){
    Route::put('/licencas/edit/{id}','LicencaController@update'); //
    Route::patch('/licencas/status','LicencaController@setStatus'); // 
 
-   Route::get('/revogacao',function(){ return view('licenca.revogacao');});
-   Route::post('/revogacao/licencas','LicencaController@getLicencas');
+   Route::get('/revog', 'LicencaController@formRevog');
+   Route::post('/revogacao','LicencaController@getLicencas');
    Route::get('/licencas-revogacao',function(){ return view('licenca.licencas-revogacao');});
-
+   
 
 });
 

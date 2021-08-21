@@ -1,0 +1,11 @@
+.erro-container {
+   border-radius: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.mensagem {
+   text-align: center;
+}
+
