@@ -103,20 +103,16 @@ class LicencaController extends Controller
       $licenca = Licenca::findOrFail($request->id);
       if($licenca->ativo == true){
          $licenca->ativo = false;
-         $licenca->save();
-         $licencas = Licenca::where('cnpj',$request->cnpj)->get();
-         return redirect()->back();
       }else{
          $licenca->ativo = true;
-         $licenca->save();
-         $licencas = Licenca::where('cnpj',$request->cnpj)->get();
-         return redirect()->back();
-         //return view('licenca.licencas-revogacao',compact('licencas'));
       }
-    }
-    public function formRevog(){
-       return view('licenca.revogacao');
-    }
+      $licenca->save();
+      return redirect()->back();
+   }
+   
+   public function formRevog(){
+      return view('licenca.revogacao');
+   }
 
    public function getLicencas(Request $request){
       $licencas = Licenca::where('cnpj',$request->cnpj)->get();
