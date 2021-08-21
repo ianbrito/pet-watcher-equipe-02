@@ -8,8 +8,8 @@
       <form action=" {{action('Auth\LoginController@Login')}} " method="post">
          @csrf
          <label>
-            Email *
-            <input type="text" type="email" name="email" placeholder="login">
+            Login *
+            <input type="text" name="login" placeholder="login">
          </label>
 
          <label>
@@ -20,7 +20,7 @@
          <button type="submit">Logar</button>
       </form>
 
-      @if ($errors->has('email') || $errors->has('password'))
+      @if ($errors->has('login') || $errors->has('password'))
         <span class="">
             <strong>Erro ao logar</strong>
         </span>

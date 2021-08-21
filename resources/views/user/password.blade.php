@@ -1,9 +1,10 @@
 @extends('layout')
 @section('content')
 <div class="container-login">
+   <div hidden >{{ URL::asset('css/login/login.css')}}</div>
    <h1>Pet Watcher</h1>
    <section class="login-section">
-      <form action="{{action('UserController@updatePassword', Auth::user())}}" method="post">
+      <form action="{{action('UserController@updatePassword', Auth::user()->id)}}" method="post">
          @csrf
 
          <label>
@@ -13,10 +14,6 @@
 
          <button type="submit">Trocar Senha</button>
       </form>
-      <div class="links">
-         <a href="">Não possuo cadastro!</a>
-         <a href="">Esqueci a senha!</a>
-      </div>
    </section>
 </div>
 @stop

@@ -1,0 +1,37 @@
+.titulo-tabela {
+   margin-top: 10vh;
+   font-weight: bold;
+   font-family: 'Arimo', sans-serif;
+   color: #4649e9;
+   border-radius: 10px;
+   text-align: center;
+}
+
+.nome-colunas {
+   background-color: #4649e9;
+   color: white;
+   font-weight: bold;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+}
+
+table {
+
+}
+
+tbody {
+   background-color: #d4d4ec;
+}
+.cadastro-cred {
+   background-color: #4649e9;
+   margin-bottom: 20px;
+   color: white;
+   font-weight: bold;
+   border-radius: 10px;
+}
+
+
+
+li button:hover {
+   box-shadow: none;
+}
