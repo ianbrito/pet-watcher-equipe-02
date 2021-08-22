@@ -10,6 +10,7 @@
 
    <link rel="stylesheet" href="{{asset('./global.css')}}">
    <link rel="stylesheet" href="{{asset('../css/login/login.css')}}">
+   <link rel="stylesheet" href="{{asset('../css/home/home.css')}}">
    <link rel="stylesheet" href="{{asset('../css/licenca/licenca.css')}}">
    <link rel="stylesheet" href="{{asset('../css/credenciada/credenciada.css')}}">
 

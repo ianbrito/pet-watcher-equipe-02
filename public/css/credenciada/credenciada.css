@@ -15,10 +15,6 @@
    border-top-right-radius: 10px;
 }
 
-table {
-
-}
-
 tbody {
    background-color: #d4d4ec;
 }
@@ -30,8 +26,50 @@ tbody {
    border-radius: 10px;
 }
 
-
-
 li button:hover {
    box-shadow: none;
+}
+
+.container-card-cred {
+   display: flex; 
+   justify-content: center; 
+   align-items: center;
+}
+
+.card-cred {
+   width: 25rem;
+   max-width: 500rem;
+   border-radius: 10px;
+   margin-bottom: 50px;
+}
+
+.card-cred-title {
+   font-family: 'Arimo';
+   font-weight: bold;
+   border-radius: 10px;
+   background-color: #5866E4;
+   padding: 3vh 3vh;
+   color: #fff;
+}
+
+.card-cred-body label {
+   font-size: 20px;
+}
+
+.card-cred-item {
+   padding: 5px 5px;
+   margin-bottom: 10px;
+   background-color: #f2f3ff;
+   border-radius: 10px;
+}
+
+.card-cred-item h4 {
+   margin-left: 20px;
+   font-family: 'Arimo';
+   font-weight: bold;
+}
+
+.card-cred-item h5{
+   padding-left: 50px;
+   
 }
