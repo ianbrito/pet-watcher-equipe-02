@@ -124,11 +124,11 @@ class CredenciadaController extends Controller
       if($credenciada->ativo == true){
          $credenciada->ativo = false;
          $credenciada->save();
-         return redirect('credenciadas');
+         return redirect()->back();
       }else{
          $credenciada->ativo = true;
          $credenciada->save();
-         return redirect('credenciadas');
+         return redirect()->back();
       }
     }
 
