@@ -9,3 +9,47 @@
    text-align: center;
 }
 
+.container-card-licenca {
+   display: flex; 
+   justify-content: center; 
+   align-items: center;
+}
+
+.card-licenca {
+   width: 25rem;
+   max-width: 500rem;
+   border-radius: 10px;
+   margin-bottom: 50px;
+}
+
+.card-licenca-title {
+   font-family: 'Arimo';
+   font-weight: bold;
+   border-radius: 10px;
+   background-color: #5866E4;
+   padding: 3vh 3vh;
+   color: #fff;
+}
+
+.card-licenca-body label {
+   font-size: 20px;
+}
+
+.card-licenca-item {
+   padding: 5px 5px;
+   margin-bottom: 10px;
+   background-color: #f2f3ff;
+   border-radius: 10px;
+}
+
+.card-licenca-item h4 {
+   margin-left: 20px;
+   font-family: 'Arimo';
+   font-weight: bold;
+}
+
+.card-licenca-item h5{
+   padding-left: 50px;
+   
+}
+

@@ -13,25 +13,48 @@
 
       <a style="margin-right: 20px" class="btn cadastro-cred" href="/licencas">Listar Licencas</a>
    </div>
-   
-   <table class="table">
-      <thead>
-         <tr class="nome-colunas">
-            <th style="border-top-left-radius: 15px;padding-left: 20px" scope="col">ID</th>
-            <th scope="col">CNPJ</th>
-            <th scope="col">Data Licenciamento</th>
-            <th scope="col">Data Vencimento</th>
-            <th style="border-top-right-radius: 15px;" scope="col">Ativo</th>
-         </tr>
-      </thead>
-      <tbody>
-         <tr scope="row" class="itens">
-            <th style="padding-left: 20px" >{{$licenca->id}}</th>
-            <th>{{$licenca->cnpj}}</th>
-            <th>{{$licenca->data_licenciamento->format('d/m/Y')}}</th>
-            <th>{{$licenca->data_vencimento->format('d/m/Y')}}</th>
-            <th>{{$licenca->ativo}}</th>
-         </tr>
-      </tbody>
-   </table>
+
+
+   <div class="container-card-licenca">
+      <div class="card card-licenca" >
+         <h5 class="card-licenca-title">Dados da Licença</h5>
+         <div class="card-licenca-body card-body">
+            
+            <div class="card-licenca-item">
+               <h4>ID</h4>
+               <h5>{{$licenca->id}}</h5>
+            </div>
+
+            <div class="card-licenca-item">
+               <h4>CNPJ</h4>
+               <h5>{{$licenca->cnpj}}</h5>
+            </div>
+
+            <div class="card-licenca-item">
+               <h4>Data de Licenciamento</h4>
+               <h5>{{$licenca->data_licenciamento}}</h5>
+            </div>
+
+            <div class="card-licenca-item">
+               <h4>Data de Vencimento</h4>
+               <h5>{{$licenca->data_vencimento}}</h5>
+            </div>
+
+            <div class="card-licenca-item">
+               <h4>Status</h4>
+               <h5>
+                  {{$licenca->ativo}}
+               @if($licenca->ativo == true)
+               (Ativo)
+               @elseif($licenca->ativo == false)
+               (Inativo)
+               @endif
+               </h5>
+            </div>
+
+
+         </div>
+      </div>
+   </div>
+
 @endsection
