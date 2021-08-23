@@ -2,7 +2,7 @@
 @section('content')
 
 
-   <div style="display: flex; flex-direction: row-reverse; margin-top: 5vh">
+   <div style="display: flex;justify-content:center; flex-direction: row-reverse; margin-top: 5vh">
       <a class="btn cadastro-cred"  href="">Mudar senha</a>
       <a class="btn cadastro-cred" style="margin-right: 10px" href="/credenciadas/{{$credenciada->id}}">Editar</a>
       {{-- @if($credenciada->ativo == true)

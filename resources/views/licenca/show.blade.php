@@ -2,7 +2,7 @@
 @section('content')
    <h1 class="titulo-tabela"></h1>    
 
-   <div style="display: flex; flex-direction: row-reverse"  class="container">
+   <div style="display: flex;justify-content:center; flex-direction: row-reverse"  class="container">
       
       <form action="/licencas/{{$licenca->id}}" method="post">
          @csrf

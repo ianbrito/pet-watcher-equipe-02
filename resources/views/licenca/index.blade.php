@@ -2,7 +2,7 @@
 @section('content')
 
    <h1 class="titulo-tabela card text-white mb-3" style="background-color: #4649e9;;min-width: 24rem;min-heigth: 10rem; border-radius: 15px;font-size: 2rem; padding: 1vh 1vh" >Licenças Cadastradas</h1>
-   <div style="display: flex; flex-direction: row-reverse;">
+   <div style="display: flex;justify-content:center; flex-direction: row-reverse;">
       <a class="btn cadastro-cred" href="/licencas/cadastro"> Cadastrar Licença</a>
       <a style="margin-right: 20px" class="btn cadastro-cred" href="/revog"> Revogar Licença</a>
    </div>

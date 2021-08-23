@@ -7,7 +7,7 @@
    style="background-color: #4649e9;;min-width: 24rem;min-heigth: 10rem; border-radius: 15px;font-size: 2rem; padding: 1vh 1vh" 
 >Estabelecimentos Credenciados</h1>
 
-   <div style="display: flex; flex-direction: row-reverse;">
+   <div style="display: flex;justify-content:center; flex-direction: row-reverse;">
       <a class="btn cadastro-cred" href="/credenciadas/cadastro">Nova Credenciada</a>
    </div>
 

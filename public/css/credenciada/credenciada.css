@@ -26,6 +26,7 @@ tbody {
    color: white;
    font-weight: bold;
    border-radius: 10px;
+   padding: 20px;
 }
 
 li button:hover {
