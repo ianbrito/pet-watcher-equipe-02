@@ -38,14 +38,14 @@ class ProprietarioController extends Controller
     {
         $form = $request;
         $proprietario = new Proprietario();
-        $proprietario->cnpj = $form->cnpj;
+        $proprietario->indentificador = $form->indentificador;
         $proprietario->tipo_pessoa = $form->tipo_pessoa;
         $proprietario->nome = $form->nome;
         $proprietario->telefone = $form->telefone;
         $proprietario->email = $form->email;
         $proprietario->endereco = $form->endereco;
         $proprietario->save();
-        return redirect('');
+        return redirect('proprietario');
     }
 
     /**
@@ -82,7 +82,7 @@ class ProprietarioController extends Controller
     public function update(Request $request, $id)
     {
         $proprietario = Proprietario::findOrFail($id);
-        $proprietario->cnpj = $request->cnpj;
+        $proprietario->indentificador = $request->indentificador;
         $proprietario->tipo_pessoa = $request->tipo_pessoa;
         $proprietario->nome = $request->nome;
         $proprietario->telefone = $request->telefone;

@@ -8,8 +8,8 @@
       @csrf
       {{ method_field('put') }}
       <label>
-         CNPJ *
-         <input value="{{$proprietario->cnpj}}" type="text" name="cnpj" placeholder="CNPJ">
+          CPF ou CNPJ*
+         <input value="{{$proprietario->indentificador}}" type="text" name="indentificador" placeholder="CPF ou CNPJ">
       </label>
 
       <label type="text">
@@ -40,7 +40,7 @@
       <button type="submit">Salvar Alterações</button>
    </form>
 
-   @if ($errors->has('email') || $errors->has('cnpj'))
+   @if ($errors->has('email') || $errors->has('indentificador'))
      <span class="">
          <strong>Erro ao Editar</strong>
      </span>

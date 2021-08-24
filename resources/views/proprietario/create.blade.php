@@ -8,8 +8,8 @@
       @csrf
 
       <label>
-         CNPJ *
-         <input type="text" name="cnpj" placeholder="CNPJ">
+         CPF ou CNPJ*
+         <input type="text" name="indentificador" placeholder="CPF ou CNPJ">
       </label>
 
       <label type="text" >
@@ -40,7 +40,7 @@
       <button type="submit">Cadastrar</button>
    </form>
 
-   @if ($errors->has('email') || $errors->has('cnpj'))
+   @if ($errors->has('email') || $errors->has('indentificador'))
      <span class="">
          <strong>Erro ao cadastrar</strong>
      </span>
