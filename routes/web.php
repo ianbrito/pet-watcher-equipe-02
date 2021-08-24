@@ -70,24 +70,33 @@ Route::group(['middleware' => ['auth','check.adm.account']], function(){
    Route::get('/licencas','LicencaController@index'); // lista todas as licencas
    Route::get('/licencas/cadastro','LicencaController@create'); // Formulario
    Route::post('/licencas/cadastro','LicencaController@store'); // Salva n o banco
-   Route::get('/licencas/{id}','LicencaController@show'); // 
-   Route::put('/licencas/{id}','LicencaController@edit'); // 
+   Route::get('/licencas/{id}','LicencaController@show'); //
+   Route::put('/licencas/{id}','LicencaController@edit'); //
    Route::put('/licencas/edit/{id}','LicencaController@update'); //
-   Route::patch('/licencas/status','LicencaController@setStatus'); // 
+   Route::patch('/licencas/status','LicencaController@setStatus'); //
 
    Route::get('/revog', 'LicencaController@formRevog');
    Route::get('/revogacao','LicencaController@getLicencas');
    Route::get('/licencas-revogacao',function(){ return view('licenca.licencas-revogacao');});
-   
+
 
 });
 
 
 // Especie Animal
-Route::get('especieanimal', 'EspecieAnimalController@index') ;
+Route::get('especieanimal', 'EspecieAnimalController@index');
 Route::get('especieanimal/create', 'EspecieAnimalController@create');
 Route::get('especieanimal/{id}', 'EspecieAnimalController@show');
 Route::get('especieanimal/edit/{id}', 'EspecieAnimalController@edit');
 Route::post('especieanimal/store' , 'EspecieAnimalController@store');
 Route::put('especieanimal/{id}', 'EspecieAnimalController@update');
 Route::delete('especieanimal/delete/{id}', 'EspecieAnimalController@destroy');
+
+
+// Priprietario
+Route::get('proprietario', 'ProprietarioController@index');
+Route::get('proprietario/create', 'ProprietarioController@create');
+Route::post('proprietario/store' , 'ProprietarioController@store');
+Route::get('/proprietario/{id}/info', 'ProprietarioController@show');
+Route::get('proprietario/edit/{id}', 'ProprietarioController@edit');
+Route::put('proprietario/{id}', 'ProprietarioController@update');
