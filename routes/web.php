@@ -84,10 +84,26 @@ Route::group(['middleware' => ['auth','check.adm.account']], function(){
 
 
 // Especie Animal
-Route::get('especieanimal', 'EspecieAnimalController@index') ;
+Route::get('especieanimal', 'EspecieAnimalController@index');
 Route::get('especieanimal/create', 'EspecieAnimalController@create');
 Route::get('especieanimal/{id}', 'EspecieAnimalController@show');
 Route::get('especieanimal/edit/{id}', 'EspecieAnimalController@edit');
 Route::post('especieanimal/store' , 'EspecieAnimalController@store');
 Route::put('especieanimal/{id}', 'EspecieAnimalController@update');
 Route::delete('especieanimal/delete/{id}', 'EspecieAnimalController@destroy');
+
+//Animais
+Route::group(['middleware' => ['auth','check.adm.account']], function(){
+   Route::get('/animal-adm', function(){
+      return view('animal.adm.show');
+   });
+
+   Route::get('/animal-cred', function(){
+      return view('animal.cred.show');
+   });
+
+   Route::get('/animal/busca', function(){
+      return view('animal.adm.busca-microchip');
+   });
+
+});

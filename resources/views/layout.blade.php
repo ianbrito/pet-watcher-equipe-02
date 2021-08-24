@@ -13,6 +13,7 @@
    <link rel="stylesheet" href="{{asset('../css/home/home.css')}}">
    <link rel="stylesheet" href="{{asset('../css/licenca/licenca.css')}}">
    <link rel="stylesheet" href="{{asset('../css/credenciada/credenciada.css')}}">
+   <link rel="stylesheet" href="{{asset('../css/animal/animal.css')}}">
 
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
