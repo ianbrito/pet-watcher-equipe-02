@@ -9,7 +9,7 @@
       {{ method_field('put') }}
       <label>
           CPF ou CNPJ*
-         <input value="{{$proprietario->indentificador}}" type="text" name="indentificador" placeholder="CPF ou CNPJ">
+         <input value="{{$proprietario->identificador}}" type="text" name="identificador" placeholder="CPF ou CNPJ">
       </label>
 
       <label type="text">
@@ -40,7 +40,7 @@
       <button type="submit">Salvar Alterações</button>
    </form>
 
-   @if ($errors->has('email') || $errors->has('indentificador'))
+   @if ($errors->has('email') || $errors->has('identificador'))
      <span class="">
          <strong>Erro ao Editar</strong>
      </span>

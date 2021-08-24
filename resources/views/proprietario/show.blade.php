@@ -20,7 +20,7 @@
       <tbody>
          <tr scope="row" class="itens">
             <th style="padding-left: 20px">{{$proprietario->id}}</th>
-            <th>{{$proprietario->indentificador}}</th>
+            <th>{{$proprietario->identificador}}</th>
             <th>{{$proprietario->tipo_pessoa}}</th>
             <th>{{$proprietario->nome}}</th>
             <th>{{$proprietario->telefone}}</th>
@@ -42,7 +42,7 @@
 
             <div class="card-cred-item">
                <h4>CPF ou CNPJ</h4>
-               <h5>{{$proprietario->indentificador}}</h5>
+               <h5>{{$proprietario->identificador}}</h5>
             </div>
 
             <div class="card-cred-item">

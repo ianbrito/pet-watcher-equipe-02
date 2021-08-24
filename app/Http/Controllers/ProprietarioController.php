@@ -38,7 +38,7 @@ class ProprietarioController extends Controller
     {
         $form = $request;
         $proprietario = new Proprietario();
-        $proprietario->indentificador = $form->indentificador;
+        $proprietario->identificador = $form->identificador;
         $proprietario->tipo_pessoa = $form->tipo_pessoa;
         $proprietario->nome = $form->nome;
         $proprietario->telefone = $form->telefone;
@@ -82,7 +82,7 @@ class ProprietarioController extends Controller
     public function update(Request $request, $id)
     {
         $proprietario = Proprietario::findOrFail($id);
-        $proprietario->indentificador = $request->indentificador;
+        $proprietario->identificador = $request->identificador;
         $proprietario->tipo_pessoa = $request->tipo_pessoa;
         $proprietario->nome = $request->nome;
         $proprietario->telefone = $request->telefone;

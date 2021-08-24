@@ -15,7 +15,7 @@ class CreateProprietarioTable extends Migration
     {
         Schema::create('proprietarios', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('indentificador');
+            $table->string('identificador');
             $table->string('tipo_pessoa');
             $table->string('nome');
             $table->string('telefone');

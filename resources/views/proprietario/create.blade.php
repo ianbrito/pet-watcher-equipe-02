@@ -9,7 +9,7 @@
 
       <label>
          CPF ou CNPJ*
-         <input type="text" name="indentificador" placeholder="CPF ou CNPJ">
+         <input type="text" name="identificador" placeholder="CPF ou CNPJ">
       </label>
 
       <label type="text" >
@@ -40,7 +40,7 @@
       <button type="submit">Cadastrar</button>
    </form>
 
-   @if ($errors->has('email') || $errors->has('indentificador'))
+   @if ($errors->has('email') || $errors->has('identificador'))
      <span class="">
          <strong>Erro ao cadastrar</strong>
      </span>
