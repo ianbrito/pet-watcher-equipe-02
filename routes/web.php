@@ -100,3 +100,8 @@ Route::post('proprietario/store' , 'ProprietarioController@store');
 Route::get('/proprietario/{id}/info', 'ProprietarioController@show');
 Route::get('proprietario/edit/{id}', 'ProprietarioController@edit');
 Route::put('proprietario/{id}', 'ProprietarioController@update');
+
+//Animal
+Route::get('/animal/baixa', function() {
+   return view('animal.animal-baixa');
+});
