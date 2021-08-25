@@ -2,51 +2,58 @@
 
 @section('content')
 <div class="container-login">
-   <h1>Cadastro de Credenciada</h1>
-<section class="login-section">
-   <form action="{{action('CredenciadaController@store')}}" method="post">
-      @csrf
-      
-      <input hidden name="tipo_conta" type="text" value="2">
+   <div class="card card-cred">
 
-      <label>
-         CNPJ *
+      <div class="card-cred-title" style="display: flex; flex-direction: column; justify-content:center; aling-items:center;">
+         <div style="display: flex; justify-content:center; aling-items:center;">
+            <img style="width: 60px;" src="{{asset('./pawprints.png')}}" alt="deeeeeee">
+         </div>
+         <div style="text-align: center;font-size: 30px;">Nova Credenciada</div>
+      </div>
+
+      <form class="card-body card-cred-body" action="{{action('CredenciadaController@store')}}" method="post">
+         @csrf
+         
+         <input hidden name="tipo_conta" type="text" value="2">
+
+         <label>
+            CNPJ *
+         </label>
          <input type="text" name="cnpj" placeholder="CNPJ">
-      </label>
 
-      <label type="text" >
-         Inscrição Estadual *
+         <label type="text" >
+            Inscrição Estadual *
+         </label>
          <input type="text" name="inscricao_estadual" placeholder="Inscrição Estadual">
-      </label>
 
-      <label type="text" >
-         Razão Social *
+         <label type="text" >
+            Razão Social *
+         </label>
          <input type="text" name="razao_social" placeholder="Razão Social">
-      </label>
 
-      <label type="text" >
-         Telefone *
+         <label type="text" >
+            Telefone *
+         </label>
          <input type="text" name="telefone" placeholder="Telefone">
-      </label>
 
-      <label>
-         E-mail *
+         <label>
+            E-mail *
+         </label>
          <input type="text" type="email" name="email" placeholder="E-mail">
-      </label>
 
-      <label type="text" >
-         Endereço *
+         <label type="text" >
+            Endereço *
+         </label>
          <input type="text" name="endereco" placeholder="Endereço">
-      </label>
 
-      <button type="submit">Cadastrar</button>
-   </form>
+         <button style="border-style: none;" class="button-form" type="submit">Cadastrar</button>
+      </form>
 
-   @if ($errors->has('email') || $errors->has('cnpj'))
-     <span class="">
-         <strong>Erro ao cadastrar</strong>
-     </span>
-   @endif
-</section>
+      @if ($errors->has('email') || $errors->has('cnpj'))
+      <span class="">
+            <strong>Erro ao cadastrar</strong>
+      </span>
+      @endif
+   </div>
 </div>
 @stop

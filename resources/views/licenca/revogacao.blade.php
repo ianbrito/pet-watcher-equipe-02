@@ -2,16 +2,25 @@
 @section('content')
 
 <div class="container-login">
-   <h1>Formulario de Revogaçao</h1>
-      <section class="login-section">
-         <form action="{{action('LicencaController@getLicencas')}}" method="get">
+   <div class="card card-cred" >
+
+      <div class="card-cred-title" style="display: flex; flex-direction: column; justify-content:center; aling-items:center;">
+         <div style="display: flex; justify-content:center; aling-items:center;">
+            <img style="width: 60px;" src="{{asset('./pawprints.png')}}" alt="deeeeeee">
+         </div>
+         <div style="text-align: center;font-size: 30px;">Revogar Licença</div>
+
+      </div>
+
+         <form class="card-body card-cred-body" action="{{action('LicencaController@getLicencas')}}" method="get">
             @csrf
             <label>
-               CNPJ *
-               <input type="text" name="cnpj" placeholder="CNPJ" required>
+               Informe o CNPJ da credenciada para busca das licenças
+               *
             </label>
-            <button class="btn login-button" type="submit">Buscar Licencas</button>
+            <input type="text" name="cnpj" placeholder="CNPJ" required>
+            <button class="button-form" style="border-style: none;" type="submit">Buscar Licencas</button>
          </form>
-      </section>
    </div>
+</div>
 @endsection
