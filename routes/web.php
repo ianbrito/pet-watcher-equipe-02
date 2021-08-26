@@ -108,3 +108,18 @@ Route::get('/animal/baixa', function() {
 
 
 
+//Animais
+Route::group(['middleware' => ['auth','check.adm.account']], function(){
+   Route::get('/animal-adm', function(){
+      return view('animal.adm.show');
+   });
+
+   Route::get('/animal-cred', function(){
+      return view('animal.cred.show');
+   });
+
+   Route::get('/animal/busca', function(){
+      return view('animal.adm.busca-microchip');
+   });
+
+});
