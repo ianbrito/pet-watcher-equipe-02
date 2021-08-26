@@ -106,7 +106,5 @@ Route::get('/animal/baixa', function() {
    return view('animal.animal-baixa');
 });
 
-Route::get('/credenciada/cadastro-ajuste', function() {
-   return view('credenciada.acesso-cred');
-});
+
 
