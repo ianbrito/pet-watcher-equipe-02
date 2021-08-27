@@ -9,6 +9,8 @@ use \App\Http\Controllers\ProprietarioController;
 use App\Proprietario;
 use \App\Http\Controllers\CredenciadaController;
 use App\Credenciada;
+use Illuminate\Support\Facades\Auth;
+
 
 class AnimalController extends Controller
 {
@@ -41,11 +43,10 @@ class AnimalController extends Controller
      */
     public function store(Request $request)
     {
-        $proprietario = Proprietario::findOrFail($request->proprietario_id);
-        $credenciada = Credenciada::findOrFail($request->credenciada_id);
         $microship = Animal::select('microship')->where('microship', $request->microship)->get();
+        $proprietario = Proprietario::findOrFail($request->proprietario_id);
 
-        if(!$proprietario->id || !$credenciada->id || count($microship) > 0) {
+        if(!$proprietario->id || count($microship) > 0) {
             return redirect('animal');
         }
 
@@ -62,7 +63,7 @@ class AnimalController extends Controller
         $animal->pedigree = $request->pedigree;
         $animal->codigo_pedigree = $request->codigo_pedigree;
         $animal->origem_pedigree = $request->origem_pedigree;
-        $animal->credenciada_id = $request->credenciada_id;
+        $animal->credenciada_id = Auth::id();
         $animal->save();
         return redirect('animal');
     }
@@ -114,10 +115,6 @@ class AnimalController extends Controller
         $animal->pedigree = $request->pedigree;
         $animal->codigo_pedigree = $request->codigo_pedigree;
         $animal->origem_pedigree = $request->origem_pedigree;
-        $animal->data_cadastro = $request->data_cadastro;
-        $animal->credenciada_id = $request->credenciada_id;
-        $animal->ativo = $request->ativo;
-        $animal->motivo_desativacao = $request->motivo_desativacao;
         $animal->save();
         return redirect('animal');
     }
@@ -128,8 +125,9 @@ class AnimalController extends Controller
      * @param  \App\Animal  $animal
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Animal $animal)
+    public function destroy($id)
     {
-        //
+        Animal::findOrFail($id)->delete();
+        return redirect('animal');
     }
 }

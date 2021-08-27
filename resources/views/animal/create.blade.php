@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-login">
-   <h1>Cadastro de Animal</h1>
+<h1>Cadastro de Animal</h1>
 <section class="login-section">
    <form action="{{action('AnimalController@store')}}" method="post">
       @csrf

@@ -40,7 +40,7 @@
          <h5 class="card-title">Gerenciar Animais</h5>
          <p class="card-text">Acesso a todas os animais cadastrados.</p>
       </div>
-      <a href="/animal/busca" style="width: 100%; font-weight: bold;padding: 2vh 2vh;" class="btn btn-primary">Gerenciar</a>
+      <a href="/animal" style="width: 100%; font-weight: bold;padding: 2vh 2vh;" class="btn btn-primary">Gerenciar</a>
    </div>
 </div>
 

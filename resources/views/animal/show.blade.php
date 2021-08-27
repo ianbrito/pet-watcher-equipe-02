@@ -3,6 +3,13 @@
 
    <div style="display: flex;justify-content:center; flex-direction: row-reverse; margin-top: 5vh">
       <a class="btn cadastro-cred" style="margin-right: 10px" href="/animal/edit/{{$animal->id}}">Editar</a>
+
+      <form action="{{ action('AnimalController@destroy', $animal->id) }}" method="post" onsubmit="return confirm('Você deseja deletar animal (&quot;{{ $animal->nome }}&quot;)?')">
+      @csrf
+      {{method_field('delete')}}
+      <button class="btn cadastro-cred" type="submit" value="deletar">Excluir</button>
+    </form>
+
    </div>
 {{-- <table class="table">
       <thead>

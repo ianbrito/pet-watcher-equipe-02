@@ -33,6 +33,7 @@ class CreateAnimaisTable extends Migration
             $table->foreign('credenciada_id')->references('id')->on('credenciadas');
             $table->boolean('ativo')->default(true);
             $table->string('motivo_desativacao')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
