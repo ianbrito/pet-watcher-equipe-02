@@ -8,28 +8,26 @@
          <div style="display: flex; justify-content:center; aling-items:center;">
             <img style="width: 60px;" src="{{asset('./pawprints.png')}}" alt="deeeeeee">
          </div>
-         <div style="text-align: center;font-size: 30px;">Nova Credenciada</div>
+         <div style="text-align: center;font-size: 30px;">Cadastro de Proprietário</div>
       </div>
 
-      <form class="card-body card-cred-body" action="{{action('CredenciadaController@store')}}" method="post">
+      <form class="card-body card-cred-body" action="{{action('ProprietarioController@store')}}" method="post">
          @csrf
-         
-         <input hidden name="tipo_conta" type="text" value="2">
 
          <label>
-            CNPJ *
+            CPF ou CNPJ*
          </label>
-         <input type="text" name="cnpj" placeholder="CNPJ">
+         <input type="text" name="identificador" placeholder="CPF ou CNPJ">
 
          <label type="text" >
-            Inscrição Estadual *
+            Tipo Pessoa *
          </label>
-         <input type="text" name="inscricao_estadual" placeholder="Inscrição Estadual">
+         <input type="text" name="tipo_pessoa" placeholder="Tipo Pessoa">
 
          <label type="text" >
-            Razão Social *
+            Nome*
          </label>
-         <input type="text" name="razao_social" placeholder="Razão Social">
+         <input type="text" name="nome" placeholder="Nome">
 
          <label type="text" >
             Telefone *
@@ -46,14 +44,14 @@
          </label>
          <input type="text" name="endereco" placeholder="Endereço">
 
-         <button style="border-style: none;" class="button-form" type="submit">Cadastrar</button>
+         <button class="button-form" style="border: hidden;" type="submit">Cadastrar</button>
       </form>
 
-      @if ($errors->has('email') || $errors->has('cnpj'))
-      <span class="">
-            <strong>Erro ao cadastrar</strong>
-      </span>
-      @endif
+   @if ($errors->has('email') || $errors->has('identificador'))
+     <span class="">
+         <strong>Erro ao cadastrar</strong>
+     </span>
+   @endif
    </div>
 </div>
 @stop

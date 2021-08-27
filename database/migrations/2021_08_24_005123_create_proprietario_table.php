@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCredenciadasTable extends Migration
+class CreateProprietarioTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateCredenciadasTable extends Migration
      */
     public function up()
     {
-        Schema::create('credenciadas', function (Blueprint $table) {
+        Schema::create('proprietarios', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('cnpj')->unique();
-            $table->string('inscricao_estadual');
-            $table->string('razao_social');
+            $table->string('identificador');
+            $table->string('tipo_pessoa');
+            $table->string('nome');
             $table->string('telefone');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('endereco');
-            $table->boolean('ativo')->default(true);
             $table->timestamps();
         });
     }
@@ -33,6 +32,6 @@ class CreateCredenciadasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('credenciadas');
+        Schema::dropIfExists('proprietarios');
     }
 }

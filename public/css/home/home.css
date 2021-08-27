@@ -1,0 +1,15 @@
+.card-hover {
+   margin-left: 5px;
+   text-decoration: none;
+   color: black;
+   border-radius: 10px;
+   cursor: pointer;
+   border: 2px solid rgb(212, 206, 206);
+}
+
+.card-hover:hover {
+   /* box-shadow: inset 0 0 1em #fff, 0 0 1em rgb(219, 210, 211); */
+   box-shadow: inset 0 0 0.2em #fff, 0 0 0.2em #5866E4;
+   text-decoration: none;
+   color: black;
+}

@@ -2,22 +2,29 @@
 
 @section('content')
 
-   <div class="container-login">
-      <h1>Pet Watcher</h1>
-   <section class="login-section">
-      <form action=" {{action('Auth\LoginController@Login')}} " method="post">
+<div class="container-card-cred" style="margin-top: 5vh;">
+   <div class=" card card-cred">
+
+      <div class="card-cred-title" style="display: flex; flex-direction: column; justify-content:center; aling-items:center;">
+         <div style="display: flex; justify-content:center; aling-items:center;">
+            <img style="width: 60px;" src="{{asset('./pawprints.png')}}" alt="deeeeeee">
+         </div>
+         <div style="text-align: center;font-size: 30px;">Pet Watcher</div>
+      </div>
+   
+      <form class="card-body card-cred-body" action=" {{action('Auth\LoginController@Login')}} " method="post">
          @csrf
          <label>
             Login *
-            <input type="text" name="login" placeholder="login">
          </label>
+         <input type="text" name="login" placeholder="login">
 
          <label>
             Senha *
-            <input type="password" name="password" placeholder="senha">
          </label>
+         <input type="password" name="password" placeholder="senha">
 
-         <button type="submit">Logar</button>
+         <button class="btn button-form" type="submit">Logar</button>
       </form>
 
       @if ($errors->has('login') || $errors->has('password'))
@@ -30,7 +37,7 @@
          <a href="">Não possuo cadastro!</a>
          <a href="">Esqueci a senha!</a>
       </div>
-   </section>
+   </div>
 </div>
 @stop
 

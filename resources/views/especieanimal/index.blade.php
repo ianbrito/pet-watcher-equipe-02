@@ -1,33 +1,27 @@
 @extends('layout')
 
 @section('content')
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th colspan="4">Descrição</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($especieAnimal as $tipo)
-        <tr>
-            <td>{{$tipo->id}}</td>
-            <td> {{$tipo->descricao}}</td>
-            <td> <a class="btn btn-secondary" href="./especieanimal/{{$tipo->id}}">Ver </a></td>
-            <td><a class="btn btn-info btn-sm" href="./especieanimal/edit/{{$tipo->id}}">Editar</a></td>
-            <td>
-                <form action=" {{action('EspecieAnimalController@destroy', $tipo->id)}} " method="post" onsubmit="return confirm('tem certeza ?')">
-                    @csrf
-                    {{method_field('delete')}}
+   <div style="display: flex;justify-content:center; flex-direction: row-reverse;margin-top: 5vh;">
+      <a class="btn cadastro-cred" href="especieanimal/create">Cadastrar Espécie</a>
+   </div>
 
-                    <input class="btn btn-danger btn-sm" type="submit" value="deletar">
+   <table class="table">
+      <thead>
+         <tr class="nome-colunas">
+            <h1 class="titulo-tabela-cred">Espécies Cadastradas</h1>
+            <th style="padding-left: 20px" scope="col">ID</th>
+            <th  scope="col" style="text-align: center" colspan="4">Descrição</th>
+         </tr>
+      </thead>
+      <tbody>
+         @foreach($especieAnimal as $tipo)
+         <tr scope="row" class="itens">
+               <th style="padding-left: 20px">{{$tipo->id}}</th>
+               <th> {{$tipo->descricao}}</th>
+               <th> <a style="font-weight: bold" class="btn" href="/especieanimal/{{$tipo->id}}">Ver Detalhes </a></th>
+         </tr>
+         @endforeach
+      </tbody>
+   </table>
 
-                </form>
-
-            </td>
-        </tr>
-        @endforeach
-    </tbody>
-</table>
-<a class="btn btn-primary px-5" href=" {{action ('EspecieAnimalController@create')}}">Novo</a>
 @stop

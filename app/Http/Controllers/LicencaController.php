@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Credenciada;
 use App\Licenca;
 use Illuminate\Http\Request;
 use LicencaSeeder;
@@ -35,18 +36,21 @@ class LicencaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $licenca = new Licenca();
-        $licenca->data_licenciamento = $request->data_licenciamento;
-        $licenca->data_vencimento = $request->data_vencimento;
-        $licenca->cnpj = $request->cnpj;
-        $licenca->save();
-        return redirect('licencas');
+   public function store(Request $request)
+   {
+      $credenciada = Credenciada::where('cnpj',$request->cnpj)->first();
 
-    }
+      $licenca = new Licenca();
+      $licenca->data_licenciamento = $request->data_licenciamento;
+      $licenca->data_vencimento = $request->data_vencimento;
+      $licenca->cnpj = $request->cnpj;
+      $licenca->id_credenciada = $credenciada[0]['id'];
+      $licenca->save();
+      return redirect('licencas');
 
-    /**
+   }
+
+   /**
      * Display the specified resource.
      *
      * @param  \App\Licenca  $licenca
@@ -103,12 +107,20 @@ class LicencaController extends Controller
       $licenca = Licenca::findOrFail($request->id);
       if($licenca->ativo == true){
          $licenca->ativo = false;
-         $licenca->save();
-         return redirect('licencas');
       }else{
          $licenca->ativo = true;
-         $licenca->save();
-         return redirect('licencas');
       }
-    }
+      $licenca->save();
+      return redirect()->back();
+   }
+
+   public function formRevog(){
+      return view('licenca.revogacao');
+   }
+
+   public function getLicencas(Request $request){
+      $licencas = Licenca::where('cnpj',$request->cnpj)->get();
+      return view('licenca.licencas-revogacao',compact('licencas'));
+   }
+   
 }

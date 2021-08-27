@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 use \App\User;
 use \App\Credenciada;
+use App\EspecieAnimal;
+use App\Licenca;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,5 +18,8 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(CredenciadaSeeder::class);
+        $this->call(EspecieAnimalSeeder::class);
+        $this->call(LicencaSeeder::class);
+
     }
 }

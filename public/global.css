@@ -28,11 +28,17 @@ input:focus {
    
 }
 
+input {
+   background-color: #f2f3ff;
+}
+
 .links {
    font-family: 'Arimo', sans-serif;
-   margin-top: 5vh;
+   margin-top: 1vh;
+   margin-bottom: 1vh;;
    display: flex;
-   justify-content: space-between;
+   justify-content: space-evenly;
    font-weight: bold;
    font-size: 15px;
 }
+

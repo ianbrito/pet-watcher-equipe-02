@@ -14,7 +14,8 @@
    border-top-right-radius: 8px;
    width: 382px;
    text-align: center;
-   background-color: #4649e9;
+   /* background-color: #4649e9; */
+   background-color: #5866E4;
    margin: 0;
    color: white;
 }
@@ -30,16 +31,16 @@
    border-bottom-right-radius: 8px;
    border-style: solid;
    border-color: rgb(189, 189, 218);
-   background-color: rgb(220, 221, 250);
+   background-color: rgb(233, 233, 247);
    }
    
-   .login-section form {
+   /* .login-section form {
       display: flex; 
       justify-content: center; 
       flex-direction: column;
       align-items: center;
       
-   }
+   } */
    
    label {
       margin-top: 1vh;
@@ -52,8 +53,9 @@
    input {
       display: block;
       box-sizing: border-box;
-      width: 300px;
-      height: 8vh;
+      width: 100%;
+      /* width: 300px;
+      height: 8vh; */
       padding: 20px;
       
       margin-top: 1vh;
@@ -78,4 +80,14 @@
       color: white;
       border-style: none;
       cursor: pointer;
+   }
+
+   .button-form {
+      font-weight: bold;
+      color: white;
+      margin-top: 1vh;
+      border-radius: 10px;
+      width: 100%;
+      height: 8vh;
+      background-color: #4649e9;
    }
