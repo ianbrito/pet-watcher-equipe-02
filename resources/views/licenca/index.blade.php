@@ -1,19 +1,19 @@
 @extends('layout')
 @section('content')
 
-   <h1 class="titulo-tabela card text-white mb-3" style="background-color: #4649e9;;min-width: 24rem;min-heigth: 10rem; border-radius: 15px;font-size: 2rem; padding: 1vh 1vh" >Licenças Cadastradas</h1>
-   <div style="display: flex;justify-content:center; flex-direction: row-reverse;">
-      <a class="btn cadastro-cred" href="/licencas/cadastro"> Cadastrar Licença</a>
-      <a style="margin-right: 20px" class="btn cadastro-cred" href="/revog"> Revogar Licença</a>
-   </div>
+<div style="display: flex;justify-content:center; flex-direction: row-reverse; margin-top: 5vh;">
+   <a class="btn cadastro-cred" href="/licencas/cadastro"> Cadastrar Licença</a>
+   <a style="margin-right: 20px" class="btn cadastro-cred" href="/revog"> Revogar Licença</a>
+</div>
+   <h1 class="titulo-tabela-cred">Licenças Cadastradas</h1>
 
    <table class="table">
    <thead>
       <tr class="nome-colunas">
-         <th style="border-top-left-radius: 15px;padding-left: 20px" scope="col">ID</th>
+         <th style=";padding-left: 20px" scope="col">ID</th>
          <th scope="col">CNPJ</th>
          <th scope="col">Ativo</th>
-         <th style="border-top-right-radius: 15px;" scope="col" style="text-align: center">Gerenciar</th>
+         <th scope="col" style="text-align: left">Gerenciar</th>
       </tr>
    </thead>
    <tbody>

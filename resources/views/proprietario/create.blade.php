@@ -2,49 +2,56 @@
 
 @section('content')
 <div class="container-login">
-   <h1>Cadastro de Proprietário</h1>
-<section class="login-section">
-   <form action="{{action('ProprietarioController@store')}}" method="post">
-      @csrf
+   <div class="card card-cred">
 
-      <label>
-         CPF ou CNPJ*
+      <div class="card-cred-title" style="display: flex; flex-direction: column; justify-content:center; aling-items:center;">
+         <div style="display: flex; justify-content:center; aling-items:center;">
+            <img style="width: 60px;" src="{{asset('./pawprints.png')}}" alt="deeeeeee">
+         </div>
+         <div style="text-align: center;font-size: 30px;">Cadastro de Proprietário</div>
+      </div>
+
+      <form class="card-body card-cred-body" action="{{action('ProprietarioController@store')}}" method="post">
+         @csrf
+
+         <label>
+            CPF ou CNPJ*
+         </label>
          <input type="text" name="identificador" placeholder="CPF ou CNPJ">
-      </label>
 
-      <label type="text" >
-         Tipo Pessoa *
+         <label type="text" >
+            Tipo Pessoa *
+         </label>
          <input type="text" name="tipo_pessoa" placeholder="Tipo Pessoa">
-      </label>
 
-      <label type="text" >
-         Nome*
+         <label type="text" >
+            Nome*
+         </label>
          <input type="text" name="nome" placeholder="Nome">
-      </label>
 
-      <label type="text" >
-         Telefone *
+         <label type="text" >
+            Telefone *
+         </label>
          <input type="text" name="telefone" placeholder="Telefone">
-      </label>
 
-      <label>
-         E-mail *
+         <label>
+            E-mail *
+         </label>
          <input type="text" type="email" name="email" placeholder="E-mail">
-      </label>
 
-      <label type="text" >
-         Endereço *
+         <label type="text" >
+            Endereço *
+         </label>
          <input type="text" name="endereco" placeholder="Endereço">
-      </label>
 
-      <button type="submit">Cadastrar</button>
-   </form>
+         <button class="button-form" style="border: hidden;" type="submit">Cadastrar</button>
+      </form>
 
    @if ($errors->has('email') || $errors->has('identificador'))
      <span class="">
          <strong>Erro ao cadastrar</strong>
      </span>
    @endif
-</section>
+   </div>
 </div>
 @stop

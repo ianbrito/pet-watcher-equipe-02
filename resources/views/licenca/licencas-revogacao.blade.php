@@ -1,20 +1,20 @@
 @extends('layout')
 @section('content')
 
-   <h1 class="titulo-tabela card text-white mb-3" style="background-color: #4649e9;;min-width: 24rem;min-heigth: 10rem; border-radius: 15px;font-size: 2rem; padding: 1vh 1vh" >Licencas para Revogação </h1>
-   <div style="display: flex; flex-direction: row-reverse;">
-      <a  class="btn cadastro-cred" href="/licencas" > Listar Licenças</a>
-   </div>
+<div style="display: flex; flex-direction: row-reverse; margin-top:5vh;">
+   <a  class="btn cadastro-cred" href="/licencas" > Listar Licenças</a>
+</div>
+   <h1 class="titulo-tabela-cred">Licencas para Revogação </h1>
    @if(sizeof($licencas) != 0)
    <table class="table">
    <thead>
       <tr class="nome-colunas">
-         <th style="border-top-left-radius: 15px;padding-left: 20px" scope="col">ID</th>
-         <th style="padding: 10px 10px" scope="col">CNPJ</th>
+         <th style="padding-left: 20px" scope="col">ID</th>
+         <th scope="col">CNPJ</th>
          <th scope="col">Data de Licenciamento</th>
          <th scope="col">Data de Vencimento</th>
          <th scope="col">Ativo</th>
-         <th style="border-top-right-radius: 15px;" scope="col" style="text-align: center" >Gerenciar</th>
+         <th scope="col" style="text-align: left" >Gerenciar</th>
       </tr>
    </thead>
    <tbody>

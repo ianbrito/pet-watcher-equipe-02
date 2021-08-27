@@ -32,7 +32,7 @@
 
    <div class="container-card-cred">
       <div class="card card-cred" >
-         <h5 class="card-cred-title">Dados da<br> proprietario</h5>
+         <h5 class="card-cred-title">Dados do<br> proprietario</h5>
          <div class="card-cred-body card-body">
 
             <div class="card-cred-item">

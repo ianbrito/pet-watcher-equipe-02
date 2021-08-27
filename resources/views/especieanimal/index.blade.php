@@ -1,16 +1,16 @@
 @extends('layout')
 
 @section('content')
+   <div style="display: flex;justify-content:center; flex-direction: row-reverse;margin-top: 5vh;">
+      <a class="btn cadastro-cred" href="especieanimal/create">Cadastrar Espécie</a>
+   </div>
 
-<div style="display: flex;justify-content:center; flex-direction: row-reverse;margin-top: 5vh;">
-   <a class="btn cadastro-cred" href="especieanimal/create">Cadastrar Espécie</a>
-</div>
-<div style="display: flex; justify-content: center;">
-   <table class="table" style="max-width: 40rem;">
+   <table class="table">
       <thead>
          <tr class="nome-colunas">
-               <th style="border-top-left-radius: 15px;padding-left: 20px" scope="col">ID</th>
-               <th style="border-top-right-radius: 15px;" scope="col" style="text-align: center" colspan="4">Descrição</th>
+            <h1 class="titulo-tabela-cred">Espécies Cadastradas</h1>
+            <th style="padding-left: 20px" scope="col">ID</th>
+            <th  scope="col" style="text-align: center" colspan="4">Descrição</th>
          </tr>
       </thead>
       <tbody>
@@ -23,5 +23,5 @@
          @endforeach
       </tbody>
    </table>
-</div>
+
 @stop

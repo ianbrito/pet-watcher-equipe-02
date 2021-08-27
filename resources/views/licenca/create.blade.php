@@ -2,29 +2,35 @@
 @section('content')   
 
 <div class="container-login">
-   <h1>Nova Licença</h1>
-<section class="login-section">
-   <form action="{{action('LicencaController@store')}}" method="post">
+   <div class="card card-cred">
+
+      <div class="card-cred-title" style="display: flex; flex-direction: column; justify-content:center; aling-items:center;">
+         <div style="display: flex; justify-content:center; aling-items:center;">
+            <img style="width: 60px;" src="{{asset('./pawprints.png')}}" alt="deeeeeee">
+         </div>
+         <div style="text-align: center;font-size: 30px;">Nova Licença</div>
+      </div>
+   <form class="card-body card-cred-body" action="{{action('LicencaController@store')}}" method="post">
       @csrf
       
       <input hidden name="tipo_conta" type="text" value="2">
 
       <label>
          CNPJ *
-         <input type="text" name="cnpj" placeholder="CNPJ" required>
       </label>
+      <input type="text" name="cnpj" placeholder="CNPJ" required>
 
       <label type="text" >
          Data Licenciamento *
-         <input type="date" name="data_licenciamento" placeholder="Data Licenciamento" required>
       </label>
+      <input type="date" name="data_licenciamento" placeholder="Data Licenciamento" required>
 
       <label type="text" >
          Data Vencimento *
-         <input type="date" name="data_vencimento" placeholder="Data Vencimento" required>
       </label>
+      <input type="date" name="data_vencimento" placeholder="Data Vencimento" required>
 
-      <button type="submit">Cadastrar</button>
+      <button class="button-form" style="border-style: none;" type="submit">Cadastrar</button>
    </form>
 
    @if ($errors->has('data_licenciamento') || $errors->has('cnpj') || $errors->has('data_vencimento'))
@@ -32,6 +38,6 @@
          <strong>Erro ao cadastrar</strong>
      </span>
    @endif
-</section>
+
 </div>
 @stop

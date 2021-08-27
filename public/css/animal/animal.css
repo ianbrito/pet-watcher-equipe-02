@@ -1,0 +1,56 @@
+
+.container-animal {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+}
+
+.container-card-animal {
+   display: flex; 
+}
+
+#card-proprietario {
+   height: 750px;
+}
+
+#card-contato-cred {
+   height: 310px;
+}
+
+.card-animal {
+   width: 25rem;
+   max-width: 500rem;
+   border-radius: 10px;
+}
+
+.card-animal-title {
+   font-family: 'Arimo';
+   font-weight: bold;
+   border-radius: 10px;
+   background-color: #5866E4;
+   padding: 3vh 3vh;
+   color: #fff;
+}
+
+.card-animal-body label {
+   font-size: 20px;
+}
+
+.card-animal-item {
+   padding: 5px 5px;
+   margin-bottom: 10px;
+   background-color: #f2f3ff;
+   border-radius: 10px;
+}
+
+.card-animal-item h4 {
+   margin-left: 20px;
+   font-family: 'Arimo';
+   font-weight: bold;
+}
+
+.card-animal-item h5{
+   padding-left: 50px;
+   
+}
+
