@@ -100,3 +100,12 @@ Route::post('proprietario/store' , 'ProprietarioController@store');
 Route::get('/proprietario/{id}/info', 'ProprietarioController@show');
 Route::get('proprietario/edit/{id}', 'ProprietarioController@edit');
 Route::put('proprietario/{id}', 'ProprietarioController@update');
+
+
+// Animais
+Route::get('animal', 'AnimalController@index');
+Route::get('animal/create', 'AnimalController@create');
+Route::post('animal/store' , 'AnimalController@store');
+Route::get('/animal/{id}/info', 'AnimalController@show');
+Route::get('animal/edit/{id}', 'AnimalController@edit');
+Route::put('animal/{id}', 'AnimalController@update');

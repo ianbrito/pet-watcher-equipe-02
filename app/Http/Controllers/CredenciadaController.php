@@ -16,7 +16,7 @@ class CredenciadaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {    
+    {
       $credenciadas = Credenciada::all();
       return view('credenciada.index', compact('credenciadas'));
     }
@@ -71,7 +71,7 @@ class CredenciadaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    { 
+    {
       $credenciada = Credenciada::findOrFail($id);
       return view('credenciada.show',compact('credenciada'));
     }
