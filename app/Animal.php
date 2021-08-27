@@ -9,4 +9,6 @@ class Animal extends Model
 {
     use SoftDeletes;
     protected $table = "animais";
+    
+    protected $dates = ['data_nascimento'];
 }
