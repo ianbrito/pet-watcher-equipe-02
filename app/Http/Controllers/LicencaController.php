@@ -44,7 +44,7 @@ class LicencaController extends Controller
       $licenca->data_licenciamento = $request->data_licenciamento;
       $licenca->data_vencimento = $request->data_vencimento;
       $licenca->cnpj = $request->cnpj;
-      $licenca->id_credenciada = $credenciada[0]['id'];
+      $licenca->id_credenciada = $credenciada->id;
       $licenca->save();
       return redirect('licencas');
 

@@ -16,7 +16,7 @@
       <input hidden name="tipo_conta" type="text" value="2">
 
       <label>
-         CNPJ *
+         CNPJ da Credenciada *
       </label>
       <input type="text" name="cnpj" placeholder="CNPJ" required>
 
