@@ -114,9 +114,11 @@ class CredenciadaController extends Controller
      * @param  \App\Credenciada  $credenciada
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Credenciada $credenciada)
+    public function destroy(Request $request)
     {
-        //
+      $credenciada = Credenciada::findOrFail($request->id);
+      $credenciada->delete();
+      return redirect('credenciadas');
     }
 
     public function setStatus(Request $request){

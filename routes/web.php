@@ -54,6 +54,7 @@ Route::group(['middleware' => ['auth','check.adm.account']], function(){
    Route::put('/credenciadas/{id}',      'CredenciadaController@update');
    Route::get('/credenciadas/{id}/info', 'CredenciadaController@show');
    Route::post('/credenciadas/status',   'CredenciadaController@setStatus');
+   Route::delete('/credenciadas/del',   'CredenciadaController@destroy');
 });
 
 //ADM

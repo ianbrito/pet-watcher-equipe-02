@@ -3,8 +3,9 @@
 
 
    <div style="display: flex;justify-content:center; flex-direction: row-reverse; margin-top: 5vh">
-      <a class="btn cadastro-cred"  href="">Mudar senha</a>
+      
       <a class="btn cadastro-cred" style="margin-right: 10px" href="/credenciadas/{{$credenciada->id}}">Editar</a>
+      
       {{-- @if($credenciada->ativo == true)
          <a class="btn cadastro-cred" href="">Desativar</a>
       @elseif($credenciada->ativo == false)
@@ -18,6 +19,15 @@
          @elseif($credenciada->ativo == false)
             <button style="margin-right: 10px" class="btn cadastro-cred" type="submit">Ativar</button>
          @endif
+      </form>
+
+      <form action="/credenciadas/del" method="post">
+         @csrf
+         @method('delete')
+         <input hidden name="id" value="{{$credenciada->id}}">
+         
+         <button style="margin-right: 10px" class="btn cadastro-cred" type="submit">Excluir</button>
+         
       </form>
    </div>
 {{-- <table class="table">
