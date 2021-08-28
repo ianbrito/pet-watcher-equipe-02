@@ -13,7 +13,7 @@ class ProprietarioSeeder extends Seeder
    public function run()
    {
       Proprietario::create([
-         'identificador' => 'octa.oca11@gmail.com',
+         'identificador' => '024888123-01',
          'tipo_pessoa' => 'Física',
          'nome' => 'Octacílio Almeida',
          'telefone' => '93991180962',
@@ -22,7 +22,7 @@ class ProprietarioSeeder extends Seeder
       ]);
 
       Proprietario::create([
-         'identificador' => 'octa.oca17@gmail.com',
+         'identificador' => '024850832-76',
          'tipo_pessoa' => 'Física',
          'nome' => 'Octacílio Carvalho',
          'telefone' => '93991180962',

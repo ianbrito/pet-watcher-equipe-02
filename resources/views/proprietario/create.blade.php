@@ -18,12 +18,15 @@
             CPF ou CNPJ*
          </label>
          <input type="text" name="identificador" placeholder="CPF ou CNPJ">
-
+         
          <label type="text" >
             Tipo Pessoa *
-         </label>
-         <input type="text" name="tipo_pessoa" placeholder="Tipo Pessoa">
-
+         </label><br>
+         <select name="tipo_pessoa" id="" required>
+            <option value="Física">Física</option>
+            <option value="Jurídica">Jurídica</option>
+         </select>
+         <br>
          <label type="text" >
             Nome*
          </label>
