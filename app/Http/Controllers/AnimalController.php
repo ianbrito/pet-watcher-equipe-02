@@ -103,10 +103,10 @@ class AnimalController extends Controller
     {
         $animal = Animal::findOrFail($id);
         $animal->tipo_aquisicao = $request->tipo_aquisicao;
-        $animal->proprietario_id = $request->proprietario_id;
+        //$animal->proprietario_id = $request->proprietario_id;
         $animal->nome = $request->nome;
         $animal->microship = $request->microship;
-        $animal->pedigree = $request->pedigree;
+        //$animal->pedigree = $request->pedigree;
         $animal->especie = $request->especie;
         $animal->data_nascimento = $request->data_nascimento;
         $animal->fase = $request->fase;
@@ -127,7 +127,8 @@ class AnimalController extends Controller
      */
     public function destroy($id)
     {
-        Animal::findOrFail($id)->delete();
-        return redirect('animal');
+      $animal = Animal::findOrFail($id);
+      $animal->delete();
+      return redirect('animal');
     }
 }

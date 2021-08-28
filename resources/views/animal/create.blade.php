@@ -13,10 +13,16 @@
    <form class="card-body card-cred-body" action="{{action('AnimalController@store')}}" method="post">
       @csrf
 
-      <label>
+      <label type="text" >
          Tipo Aquisiçao *
-      </label>
-      <input type="text" name="tipo_aquisicao" placeholder="Tipo Aquisição">
+      </label><br>
+      <select name="tipo_aquisicao" id="" required>
+         <option value="Adoção">Adoção</option>
+         <option value="Criação Comercial">Criação Comercial</option>
+         <option value="De Companhia">De Companhia</option>
+         <option value="Proteção Animal">Proteção Animal</option>
+      </select>
+      <br>
 
       <label>
         Nome *
@@ -39,29 +45,46 @@
       <input type="text" name="especie" placeholder="Espécie">
 
       <label>
-         Data Nascimento*
+         Data Nascimento *
       </label>
       <input type="date" name="data_nascimento" placeholder="Data Nascimento">
 
-      <label>
+      <label type="text" >
          Fase *
-      </label>
-      <input type="text" name="fase" placeholder="Fase">
-
-      <label>
-         Porte *
-      </label>
-      <input type="text" name="porte" placeholder="Porte">
-
-      <label>
-        Sexo *
-      </label>
-      <input type="text" name="sexo" placeholder="Sexo">
+      </label><br>
+      <select name="fase" id="" required>
+         <option value="Filhote">Filhote</option>
+         <option value="Adulto">Adulto</option>
+      </select>
+      <br>
 
       <label type="text" >
-         Pedigree
-      </label>
-      <input type="text" name="pedigree" placeholder="Pedigree">
+         Porte *
+      </label><br>
+      <select name="porte" id="" required>
+         <option value="Pequeno">Pequeno</option>
+         <option value="Médio">Médio</option>
+         <option value="Grande">Grande</option>
+      </select>
+      <br>
+
+      <label type="text" >
+         Sexo *
+      </label><br>
+      <select name="sexo" id="" required>
+         <option value="Macho">Macho</option>
+         <option value="Fêmea">Fêmea</option>
+      </select>
+      <br>
+
+      <label type="text" >
+         Pedigree ? *
+      </label><br>
+      <select name="pedigree" id="" required>
+         <option value="Sim">Sim</option>
+         <option value="Não">Não</option>
+      </select>
+      <br>
 
       <label type="text" >
          Código Pedigree
