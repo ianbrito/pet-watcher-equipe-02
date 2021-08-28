@@ -130,3 +130,14 @@ Route::group(['middleware' => ['auth','check.adm.account']], function(){
 //    });
 
 });
+
+//Funcionário 
+Route::get('/funcionario', 'FuncionarioController@index');
+Route::get('/funcionario/create', 'FuncionarioController@create');
+Route::get('/funcionario/{id}/info', 'FuncionarioController@show');
+Route::get('/funcionario/edit/{id}', 'FuncionarioController@edit');
+Route::put('/funcionario/{id}', 'FuncionarioController@update');
+Route::post('/funcionario/status', 'FuncionarioController@setStatus');
+
+
+Route::post('/funcionario/store', 'FuncionarioController@store');
