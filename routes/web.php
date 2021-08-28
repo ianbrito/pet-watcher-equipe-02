@@ -23,7 +23,7 @@ Route::get('', 'HomeController@index')->name('home')->middleware('auth');
 
 
 
-Route::get('', 'HomeController@index')->name('home')->middleware('auth');
+//Route::get('', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::get('/login', function () {
    return view('auth.login');
