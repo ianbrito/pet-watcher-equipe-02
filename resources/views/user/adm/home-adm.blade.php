@@ -1,6 +1,8 @@
 @extends('layout')
 
 @section('content')
+
+<h1 class="titulo-tabela-cred" style="margin-top: 5vh;">Home DIVISA</h1>
 <div style="display: flex; aling-items:center; justify-content: space-evenly;">
       <div class="card card-hover" style="width: 20rem; margin-top: 5vh">
          <div class="card-body">

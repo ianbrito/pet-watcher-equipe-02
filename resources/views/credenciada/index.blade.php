@@ -22,7 +22,7 @@
             <th>{{$credenciada->razao_social}}</th>
             @if($credenciada->ativo==true)
                <th>Ativo</th>
-            @elseif(!$credenciada->ativo==false)
+            @elseif($credenciada->ativo==false)
                <th>Inativo</th>
             @endif
             <th>

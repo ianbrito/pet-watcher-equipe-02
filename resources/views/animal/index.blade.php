@@ -13,6 +13,7 @@
       <thead>
          <tr class="nome-colunas">
             <th style="padding-left: 20px" scope="col">ID</th>
+            <th scope="col">Nome</th>
             <th scope="col">Tipo de Aquisicao</th>
             <th scope="col">Microship</th>
             <th scope="col">Pedigree</th>
@@ -23,6 +24,7 @@
       @foreach ($animais as $animal)
          <tr scope="row" class="itens">
             <th style="padding-left: 20px">{{$animal->id}}</th>
+            <th>{{$animal->nome}}</th>
             <th>{{$animal->tipo_aquisicao}}</th>
             <th>{{$animal->microship}}</th>
             <th>{{$animal->pedigree}}</th>

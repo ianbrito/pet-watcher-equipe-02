@@ -11,7 +11,7 @@
          <div style="text-align: center;font-size: 30px;">Nova Credenciada</div>
       </div>
 
-      <form class="card-body card-cred-body" action="animal/store" method="post">
+      <form class="card-body card-cred-body" action="/credenciadas/cadastro" method="post">
          @csrf
          
          <input hidden name="tipo_conta" type="text" value="2">
