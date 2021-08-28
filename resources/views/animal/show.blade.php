@@ -2,7 +2,7 @@
 @section('content')
 
    <div style="display: flex;justify-content:center; flex-direction: row-reverse; margin-top: 5vh">
-      <a class="btn cadastro-cred" style="margin-right: 10px" href="/animal/edit/{{$animal->id}}">Editar</a>
+      <a class="btn cadastro-cred" style="margin-left: 10px" href="/animal/edit/{{$animal->id}}">Editar</a>
 
       <form action="{{ action('AnimalController@destroy', $animal->id) }}" method="post" onsubmit="return confirm('Você deseja deletar animal (&quot;{{ $animal->nome }}&quot;)?')">
       @csrf
@@ -83,7 +83,7 @@
 
             <div class="card-cred-item">
                <h4>Idade</h4>
-               <h5>{{$animal->idade}}</h5>
+               <h5>{{$animal->data_nascimento->format('d-m-Y')}}</h5>
             </div>
          </div>
       </div>
