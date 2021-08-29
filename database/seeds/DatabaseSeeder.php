@@ -1,5 +1,6 @@
 <?php
 
+use App\Animal;
 use Illuminate\Database\Seeder;
 use \App\User;
 use \App\Credenciada;
@@ -24,6 +25,7 @@ class DatabaseSeeder extends Seeder
        $this->call(UserSeeder::class);
        $this->call(ProprietarioSeeder::class);
       $this->call(FuncionarioSeeder::class);
+      $this->call(AnimalSeeder::class);
 
    }
 }
