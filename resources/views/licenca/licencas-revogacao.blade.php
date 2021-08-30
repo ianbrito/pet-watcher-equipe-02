@@ -35,9 +35,13 @@
                      <input type="text" hidden name="id" value="{{$licenca->id}}">
                      <input type="text" hidden name="cnpj" value="{{$licenca->cnpj}}">
                      <button style="padding: 0;" class="btn">Revogar Licença</button>
-                  </form>  
+                  </form action="{{action('LicencaController@setStatus')}}" method="post">  
                   @elseif($licenca->ativo == false)
                   <form>
+                     @csrf
+                     @method('patch')
+                     <input type="text" hidden name="id" value="{{$licenca->id}}">
+                     <input type="text" hidden name="cnpj" value="{{$licenca->cnpj}}">
                      <button style="padding: 0;" disabled class="btn">Licenca Revogada</button>
                   </form>
                   @endif

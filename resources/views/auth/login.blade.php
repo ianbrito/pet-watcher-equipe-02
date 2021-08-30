@@ -33,10 +33,6 @@
         </span>
       @endif
 
-      <div class="links">
-         <a href="">Não possuo cadastro!</a>
-         <a href="">Esqueci a senha!</a>
-      </div>
    </div>
 </div>
 @stop

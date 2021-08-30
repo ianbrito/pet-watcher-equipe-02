@@ -8,29 +8,29 @@
          <div style="display: flex; justify-content:center; aling-items:center;">
             <img style="width: 60px;" src="{{asset('./pawprints.png')}}" alt="deeeeeee">
          </div>
-         <div style="text-align: center;font-size: 30px;">Cadastro de Proprietário</div>
+         <div style="text-align: center;font-size: 30px;">Novo Funcionário</div>
       </div>
 
-      <form class="card-body card-cred-body" action="{{action('ProprietarioController@store')}}" method="post">
+      <form class="card-body card-cred-body" action="/funcionario/store" method="post">
          @csrf
-
-         <label>
-            CPF ou CNPJ*
-         </label>
-         <input type="text" name="identificador" placeholder="CPF ou CNPJ">
          
+         <input hidden name="tipo_conta" type="text" value="2">
+
          <label type="text" >
-            Tipo Pessoa *
-         </label><br>
-         <select name="tipo_pessoa" id="" required>
-            <option value="Física">Física</option>
-            <option value="Jurídica">Jurídica</option>
-         </select>
-         <br>
-         <label type="text" >
-            Nome*
+            Nome *
          </label>
          <input type="text" name="nome" placeholder="Nome">
+
+         <label>
+            CPF *
+         </label>
+         <input type="text" name="cpf" placeholder="CPF">
+
+         <label type="text" >
+            CNPJ da Credenciada *
+         </label>
+         <input type="text" name="cnpj" placeholder="CNPJ da Credenciada">
+
 
          <label type="text" >
             Telefone *
@@ -47,14 +47,14 @@
          </label>
          <input type="text" name="endereco" placeholder="Endereço">
 
-         <button class="button-form" style="border: hidden;" type="submit">Cadastrar</button>
+         <button style="border-style: none;" class="button-form" type="submit">Cadastrar</button>
       </form>
 
-   @if ($errors->has('email') || $errors->has('identificador'))
-     <span class="">
-         <strong>Erro ao cadastrar</strong>
-     </span>
-   @endif
+      @if ($errors->has('email') || $errors->has('cnpj'))
+      <span class="">
+            <strong>Erro ao cadastrar</strong>
+      </span>
+      @endif
    </div>
 </div>
 @stop

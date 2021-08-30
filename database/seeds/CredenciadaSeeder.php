@@ -15,13 +15,35 @@ class CredenciadaSeeder extends Seeder
     {
       Credenciada::create(
            [
-            'cnpj' => '12312313434',
-            'inscricao_estadual' => '000000',
-            'razao_social' => '1233333',
-            'telefone' => '93991884830',
+            'cnpj' => '11222333/0001-00',
+            'inscricao_estadual' => '1111111',
+            'razao_social' => 'Dom Pet',
+            'telefone' => '3522-9295',
             'email' => 'rx001@gmail.com',
-            'endereco' => 'Rua A'
+            'endereco' => 'Av. Dom Frederico'
            ]
         );
+
+        Credenciada::create(
+         [
+          'cnpj' => '21222333/0001-00',
+          'inscricao_estadual' => '2111111',
+          'razao_social' => 'Super Pet',
+          'telefone' => '3522-9296',
+          'email' => 'rx002@gmail.com',
+          'endereco' => 'Av. Rui Barbosa'
+         ]
+      );
+
+      Credenciada::create(
+         [
+          'cnpj' => '31222333/0001-00',
+          'inscricao_estadual' => '3111111',
+          'razao_social' => 'Kit Petstore',
+          'telefone' => '3522-9297',
+          'email' => 'r003@gmail.com',
+          'endereco' => 'Av. Fernando Guilhon'
+         ]
+      );
     }
 }

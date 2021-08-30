@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Home do funcionario</h1>
+<h1 class="titulo-tabela-cred" style="margin-top: 5vh;">Home do funcionario</h1>
 
 
 <div style="display: flex; aling-items:center; justify-content: space-evenly;">
@@ -20,7 +20,7 @@
          <h5 class="card-title">Gerenciar Animais</h5>
          <p class="card-text">Acesso a todos os animais cadastrados, cria, atualização.</p>
       </div>
-      <a href="" style="width: 100%; font-weight: bold;padding: 2vh 2vh;" class="btn btn-primary">Gerenciar</a>
+      <a href="/animal" style="width: 100%; font-weight: bold;padding: 2vh 2vh;" class="btn btn-primary">Gerenciar</a>
    </div>
 
 </div>

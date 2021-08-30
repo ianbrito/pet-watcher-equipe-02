@@ -3,6 +3,7 @@
 
    <div style="display: flex;justify-content:center; flex-direction: row-reverse; margin-top: 5vh">
       <a class="btn cadastro-cred" style="margin-right: 10px" href="/proprietario/edit/{{$proprietario->id}}">Editar</a>
+      <a class="btn cadastro-cred" style="margin-right: 10px" href="/proprietario">Lista de Proprietários</a>
    </div>
 {{-- <table class="table">
       <thead>
@@ -41,12 +42,12 @@
             </div>
 
             <div class="card-cred-item">
-               <h4>CPF ou CNPJ</h4>
+               <h4>Identificador</h4>
                <h5>{{$proprietario->identificador}}</h5>
             </div>
 
             <div class="card-cred-item">
-               <h4>tipo Pessoa</h4>
+               <h4>Tipo Pessoa</h4>
                <h5>{{$proprietario->tipo_pessoa}}</h5>
             </div>
 

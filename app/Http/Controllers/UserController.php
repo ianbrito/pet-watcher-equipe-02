@@ -59,7 +59,7 @@ class UserController extends Controller
         $users = User::find($user);
         $users->password = bcrypt($request->password);
         $users->save();
-        return redirect('home');
+        return redirect('');
     }
 
 

@@ -16,7 +16,7 @@ class CredenciadaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {    
+    {
       $credenciadas = Credenciada::all();
       return view('credenciada.index', compact('credenciadas'));
     }
@@ -71,7 +71,7 @@ class CredenciadaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    { 
+    {
       $credenciada = Credenciada::findOrFail($id);
       return view('credenciada.show',compact('credenciada'));
     }
@@ -114,9 +114,11 @@ class CredenciadaController extends Controller
      * @param  \App\Credenciada  $credenciada
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Credenciada $credenciada)
+    public function destroy(Request $request)
     {
-        //
+      $credenciada = Credenciada::findOrFail($request->id);
+      $credenciada->delete();
+      return redirect('credenciadas');
     }
 
     public function setStatus(Request $request){
